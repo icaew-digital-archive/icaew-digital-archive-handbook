@@ -1,0 +1,31 @@
+# Useful resources
+
+
+## Preservica
+
+* **[Preservica - Universal Access](https://icaew.access.preservica.com) (the primary access point for users)**  
+* [Preservica - Universal Acccess - Wordpress Admin](https://icaew.access.preservica.com/wp-login.php)  
+* [Preservica - Admin](https://eu.preservica.com/sso/authentication/login.html)  
+* [Preservica Service Desk](https://preservica.freshdesk.com/support/login)  
+* [Preservica User Group](https://usergroup.preservica.com)  
+
+## Archive-It
+
+* **[Archive-It - Public collections](https://archive-it.org/organizations/1613) (the primary access point for users)**  
+* [Archive-It - Admin](https://partner.archive-it.org/)  
+* [Archive-It - Help Centre and Training](https://support.archive-it.org/hc/en-us/articles/208117886-Live-Archive-It-Training-Sessions-and-Webinars)  
+
+## Sitecore
+
+* [Sitecore](http://master.icaew.com/sitecore/login)   
+
+## Tooling documentation
+* [ExifTool documentation](https://exiftool.org/exiftool_pod.html)  
+
+
+## General digital preservation / web archiving
+
+* [DigitalPreservationCoalition](https://www.dpconline.org/)  
+* _The Theory and Craft of Digital Preservation_ eBook available from the ICAEW library  
+* _Digital Preservation for Libraries, Archives, and Museums_ eBook available from the ICAEW library
+* [Digital Archiving - What Is It! - TfL Corporate Archives Webinar](https://www.youtube.com/watch?v=2NgzW5YqUXA)

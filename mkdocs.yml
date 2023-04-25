@@ -1,0 +1,44 @@
+site_name: ICAEW Digital Archive Handbook
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - 'User guides':
+        - 'Why digital preservation / web-archiving?': 'user-guides/why-dp-web-archives.md'
+        - 'Overview of the ICAEW Digital Archive': 'user-guides/overview.md'
+        - 'Preservica':
+            - 'Overview and collections': 'user-guides/preservica/preservica-overview.md'
+            - 'Accessing / searching Preservica': 'user-guides/preservica/accessing-preservica.md'
+        - 'Web archives / Archive-It':
+            - 'Overview and collections': 'user-guides/web-archiving/web-archive-overview.md'
+            - 'Accessing / searching the web archives': 'user-guides/web-archiving/accessing-the-web-archives.md'
+    - 'Admin guides':
+        - 'Preservica':
+            - 'Uploading large files via AWS CLI': 'admin-guides/preservica/aws-cli.md'
+        - 'Web archives / Archive-It':
+            - 'Accessing web captures offline': 'admin-guides/web-archiving/accessing-web-captures-offline.md'
+            - 'Archiving Twitter': 'admin-guides/web-archiving/archiving-twitter.md'
+            - 'Web crawl process overview': 'admin-guides/web-archiving/crawl-process-overview.md'
+            - 'Downloading content from the Internet Archive Wayback Machine': 'admin-guides/web-archiving/downloading-content-from-IA.md'
+            - 'Downloading videos from YouTube and other sites': 'admin-guides/web-archiving/downloading-videos-from-youtube.md'
+            - 'Downloading WARC files from Archive-It': 'admin-guides/web-archiving/downloading-warcs-from-archive-it.md'
+            - 'WARC file naming conventions': 'admin-guides/web-archiving/warc-name-conventions.md'
+        - 'Digital archiving workstation setup': 'admin-guides/digital-archive-workstation.md'
+        - 'Editing the ICAEW Digital Archive Handbook': 'admin-guides/editing-digital-archive-handbook.md'
+        - 'Reporting / Statistics': 'admin-guides/reporting.md'
+    - Useful resources: useful-resources.md
+    - Logins: logins.md
+use_directory_urls: false
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+theme:
+  name: material
+  palette:
+    scheme: default
+  features:
+    - navigation.tabs
+plugins:
+    - offline
+    - search
