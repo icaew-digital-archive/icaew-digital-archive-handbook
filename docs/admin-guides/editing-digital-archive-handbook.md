@@ -34,4 +34,4 @@ In order to create a static site (which can then be copied over for offline view
 
 This will create a static website located in the project directory under /site/. The contents of this folder can be transferred anywhere where the documentation needs to be viewed, i.e. inside the ICAEW VDI.  
 
-The contents of /site/ should be copied over to \\icaew.co.uk\met2\ICAEW\DA\ICAEW Digital Archive Handbook and G:\Apps\Passport\ICAEW Digital Archive Handbook.
+The contents of /site/ should be copied over to G:\Apps\Passport\ICAEW Digital Archive Handbook.
