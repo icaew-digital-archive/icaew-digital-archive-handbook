@@ -16,7 +16,7 @@ Here you will find both user guides, admin guides, and useful resources for all 
 
 ## Digital Archive Workplan
 
-* To see what is on the horizon for the ICAEW Digital Archive, see the <a href="file:///G:/MD/LIS/LIBRARY%20AND%20INFORMATION%20SERVICE/Plans/Digital%20Archive%20workplan%202023%20-%20FINAL.docx">Digital Archive Workplan</a>.
+* To see what is on the horizon for the ICAEW Digital Archive, see the <a href="file:///\\icaew.co.uk\met2\ICAEW\DA\Digital-archive-workplan-2023.docx">Digital Archive Workplan - 2023</a>.
 
 <br>
 
