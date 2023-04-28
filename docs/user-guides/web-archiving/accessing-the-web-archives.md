@@ -9,7 +9,7 @@ A full capture of the ICAEW.com consists of the following:
 
 - A public capture in that is hosted by Archive-It (WARC/Web Archive format). Accessible to the public and staff.
 
-- A restricted capture that has been made locally and has been ingested into the admin area of Preservica (WARC/Web Archive format). Only available to view offline via the digital archiving workstation.
+- A restricted capture that has been made locally and has been ingested into the admin area of Preservica (WARC/Web Archive format). Accessible to staff for offline viewing via [https://replayweb.page/](https://replayweb.page/)</a>.
 
 - A restricted capture made using the wget crawler with assets saved in their native formats, i.e., HTML, CSS, JS etc. This crawl is primarily made a backup for the other two crawls. Only available to view offline via the digital archiving workstation.
 
@@ -58,7 +58,8 @@ For example, if needing to check whether ‘https://www.icaew.com/technical/Tech
 
 ### Restricted captures held offline/locally
 
-Restricted captures are currently only available to be viewed offline via the Digital Archive Workstation. If you require to see a restricted archived webpage please contact the Digital Archive Manager / Digital Archive Assistant. Instructions for offline access are in the Admin Guides section of the Digital Archive Handbook, located [here](../../admin-guides/web-archiving/accessing-web-captures-offline.md).
+Restricted captures are currently available for viewing via [https://replayweb.page/](https://replayweb.page/). To view the offline captures you first need to load them into the web app. The web captures are currently held here: W:\DA\Web Archive Replay\WACZ-files
+
 
 ## Searching the captures
 ### Searching the public Archive-It capture
