@@ -15,6 +15,7 @@ nav:
         - 'Preservica':
             - 'Uploading large files via AWS CLI': 'admin-guides/preservica/aws-cli.md'
             - 'Filename conventions': 'admin-guides/preservica/filename-conventions.md'
+            - 'Backing up Preservica locally': 'admin-guides/preservica/backing-up.md'
         - 'Web archives / Archive-It':
             - 'Accessing web captures offline': 'admin-guides/web-archiving/accessing-web-captures-offline.md'
             - 'Archiving Twitter': 'admin-guides/web-archiving/archiving-twitter.md'
