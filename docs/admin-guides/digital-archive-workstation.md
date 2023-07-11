@@ -115,6 +115,10 @@ _Installed via:_
 
         pip install youtube-dl
 
+* [py-wacz](https://github.com/webrecorder/py-wacz)  
+_py-wacz is a Python module and command line utility for working with web archive data using the WACZ format specification._
+
+
 * [py-wasapi-client](https://github.com/unt-libraries/py-wasapi-client)  
 _A client for the Archive-It And Webrecorder WASAPI Data Transfer API. Used to download WARC files from Archive-It._
 
