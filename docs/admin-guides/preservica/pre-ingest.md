@@ -7,7 +7,7 @@ This page covers the appraisal and pre-ingest workflows before an asset is inges
     * Four paper issues of Quarterly were published, all in the year 2020. From March 2021, longer form articles that previously would have appeared in the Quarterly magazine have been incorporated into the Specials section of Insights on ICAEW's website, where they are arranged according to theme.
 
 ## Appraisal
-### Run Brunnhilde:
+### Run Brunnhilde
 
 Brunnhilde provides the three following features.
 
@@ -38,7 +38,7 @@ Run Brunnhilde using the following in cmd:
 
     No complications.
 
-### Run Exiftool:
+### Run Exiftool
 * Exiftool lists the properties of a document in a csv to be human readable. The following properties will be included: title, author, subject, keywords, producer, CreateDate, ModifyDate, FileName.
 * Check the title properties, if the titles are misleading or completely incorrect. Strip the metadata from the file.
 
@@ -50,6 +50,8 @@ Run Brunnhilde using the following in cmd:
 
         exiftool -csv -r -T -Title -Author -Subject -Keywords -Producer -CreateDate -ModifyDate -FileName /home/digital-archivist/Desktop/Quarterly_example > Desktop/exiftool_output.csv
 * Quarterly titles were either correct or blank. No need to strip the metadata. 
+
+**TODO: Cover how to strip metadata from PDFs, doc, docx etc. here.**
 
 ## Pre-Ingest
 ### Prepare a Submission Information Package (SIP)
