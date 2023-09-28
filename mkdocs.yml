@@ -13,6 +13,7 @@ nav:
             - 'Accessing / searching the web archives': 'user-guides/web-archiving/accessing-the-web-archives.md'
     - 'Admin guides':
         - 'Preservica':
+            - 'Auto classification': 'admin-guides/preservica/auto-classification.md'
             - 'Appraisal and pre-ingest workflow': 'admin-guides/preservica/pre-ingest.md'
             - 'Uploading large files via AWS CLI': 'admin-guides/preservica/aws-cli.md'
             - 'Filename conventions': 'admin-guides/preservica/filename-conventions.md'
