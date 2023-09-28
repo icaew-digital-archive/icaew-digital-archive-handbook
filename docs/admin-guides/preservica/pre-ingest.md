@@ -1,13 +1,10 @@
 # Appraisal and pre-ingest workflow
 
-This page covers the appraisal and pre-ingest workflows before an asset is ingested into Preservica. Quarterly magazine is given as a working example of the workflows. However, the workflows should be applicable to all assets.
+This page covers the appraisal and pre-ingest workflows before an asset is ingested into Preservica.
 
-* Example: Quarterly
-    * 4 files to be preserved.
-    * Four paper issues of Quarterly were published, all in the year 2020. From March 2021, longer form articles that previously would have appeared in the Quarterly magazine have been incorporated into the Specials section of Insights on ICAEW's website, where they are arranged according to theme.
 
 ## Appraisal
-### Run Brunnhilde
+### Brunnhilde
 
 Brunnhilde provides the three following features.
 
@@ -23,33 +20,16 @@ Run Brunnhilde using the following in cmd:
 
 **destination** being the path to destination for reports
 
+Check for any complications such as 0 sized files and duplicates.
 
-* Example: Quarterly.
-
-        brunnhilde.py Desktop/Quarterly_example Desktop/brunnhilde_output
-
-    Result
-
-    * No viruses
-    * 2 file types: separate version of PDFs.
-    * No error.
-    * No duplication.
-    * Checksums created.
-
-    No complications.
-
-### Run Exiftool
+### Exiftool
 * Exiftool lists the properties of a document in a csv to be human readable. The following properties will be included: title, author, subject, keywords, producer, CreateDate, ModifyDate, FileName.
-* Check the title properties, if the titles are misleading or completely incorrect. Strip the metadata from the file.
+* Check the title properties, if the titles are misleading or completely incorrect. Strip the metadata from the file if any are found to be misleading or completely incorrect.
 
 * Run Exiftool using the following in cmd:
 
-        exiftool -csv -r -T -Title -Author -Subject -Keywords -Producer -CreateDate -ModifyDate -FileName "input" > "output.csv"
+        exiftool -csv -r -T -Title -Author -Subject -Keywords -Producer -CreateDate -ModifyDate -FileName "input file/folder" > "output.csv"
 
-* Example: Quarterly
-
-        exiftool -csv -r -T -Title -Author -Subject -Keywords -Producer -CreateDate -ModifyDate -FileName /home/digital-archivist/Desktop/Quarterly_example > Desktop/exiftool_output.csv
-* Quarterly titles were either correct or blank. No need to strip the metadata. 
 
 **TODO: Cover how to strip metadata from PDFs, doc, docx etc. here.**
 
@@ -74,24 +54,6 @@ Run Brunnhilde using the following in cmd:
     | Language | A language of the intellectual content of the resource. |
     | Relation | A reference to a related resource. |
 
-## Auto Classification for DC Metadata
-
-ICAEW has a strict taxonomy that is held in Symphony. We use this resource to auto classify the dublin core subject metadata. The script provides subject classification to a percentage, the decision is to include only subjects with a classification threshold of 90% plus. The second rule is to include only the top 4 subjects classified by Symphony.
-
-Script:
-
-    java -jar Semaphore-CLSClient-5.6.3.jar --cloud-api-key=q+XmveQ3IDm3UXArcKDQLg== --url=https://cloud.smartlogic.com/svc/138b5bab-8ac4-45e0-b36f-815008f9921d/ input --threshold=90 --csv-output-file output.csv
-
-### Things to note:
-
-* threshold=90 is the 90% classification threshold.
-* the output must be a csv.
-
-### Process:
-
-* Enter the output csv, apply auto filter.
-* Column C, choose exclusively Generic_UPWARD.
-* From there, copy the top 4 90 + subjects into the dublin core csv SIP creation tool described below. 
 
 ## SIP 
 
@@ -101,34 +63,29 @@ Script:
 
 ### Python SIP creation tools
 
-We have three seperate fit for purpose tools that achieve the objective of creating a Preservica SIP. The tools can be found [here](https://github.com/icaew-digital-archive/digital-archiving-scripts/tree/main/opex-scripts).
+We have four seperate fit for purpose tools that achieve the objective of creating a Preservica SIP. The tools can be found on the [icaew-digital-archive](https://github.com/icaew-digital-archive/digital-archiving-scripts/tree/main/opex-scripts) GitHub page.
 
-* Tool A: creates a .csv file with seperate SHA-1 hash's for each artefact. The csv file includes relevant dublin core fields to populate for the .opex metadata file. 
+* **Tool A**: creates a .csv file with seperate SHA-1 hashes for each artefact and includes relevant dublin core fields to populate for the .opex metadata file. 
 
         a_files_to_csv.py [-h] [--hash_type {sha1,md5}] directory output
 
-    After populating the .csv with the relevant dublin core metadata, move on to Tool B.
+    
+    Populate the .csv with the relevant Dublin Core metadata. Make use of Semaphore's Classification Server via the **Semaphore-CLSClient** to auto-classify documents which can be used in the Subject fields. Instructions for the Classification Server can be found [here](./auto-classification.md).
+    
+    After populating the .csv with the relevant dublin core metadata, move on to the rename tool.
 
-* Tool B: uses the completed .csv to create unique .opex metadata files for each digital artefact in the folder. Including fixity and dublin core metadata. 
+* **Rename tool**: renames the original filenames (found in the 'filename' column) to filenames given in the 'Title' column from the csv produced by a_files_to_csv.py.
+
+        csv_file_rename.py [-h] file_directory csv_file_path
+        
+    After using the script to rename the files, move on to Tool B. Note: after running the script you should also copy the contents of the 'Title' field over to 'filename' in the csv file as Tool B uses this column to name the .opex files.
+
+* **Tool B**: uses the completed .csv to create unique .opex metadata files for each digital artefact in the folder. Including fixity and dublin core metadata. 
 
         b_csv_to_opex_xml.py csv_file output_dir
 
     After this tool has successfully created a .opex metadata file for each digital artefact, move on to Tool C.
 
-* Tool C: creates a folder level .opex metadata document. It scans the parent folder and creates an authenicated folder level .opex metadata document that serves as a manifest for the ingest.
+* **Tool C**: creates a folder level .opex metadata document. It scans the parent folder and creates an authenicated folder level .opex metadata document that serves as a manifest for the ingest.
 
         c_folders_of_files_to_folder_opex_xml.py folder_path
-
-    When all three tools have completed there job the tree of the SIP should look like this Quarterly Example:
-
-    * Folder: Quarterly-Example
-
-        * Quarterly-Example.opex
-        * Quarterly-1.pdf
-        * Quarterly-1.pdf.opex
-        * Quarterly-2.pdf
-        * Quarterly-2.pdf.opex
-        * Quarterly-3.pdf
-        * Quarterly-3.pdf.opex
-        * Quarterly-4.pdf
-        * Quarterly-4.pdf.opex
