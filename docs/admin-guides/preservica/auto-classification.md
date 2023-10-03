@@ -4,7 +4,7 @@ ICAEW has a strict taxonomy that is held in Symphony. We use this resource to au
 
 Script:
 
-    java -jar Semaphore-CLSClient-5.6.3.jar --cloud-api-key=q+XmveQ3IDm3UXArcKDQLg== --url=https://cloud.smartlogic.com/svc/138b5bab-8ac4-45e0-b36f-815008f9921d/ input --threshold=90 --csv-output-file output.csv
+    java -jar Semaphore-CLSClient-5.6.3.jar --cloud-api-key=q+XmveQ3IDm3UXArcKDQLg== --url=https://cloud.smartlogic.com/svc/138b5bab-8ac4-45e0-b36f-815008f9921d/ --singlearticle --threshold=90 input --csv-output-file subject-terms-output.csv
 
 
 ### Things to note:
