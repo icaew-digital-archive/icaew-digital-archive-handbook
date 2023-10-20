@@ -16,9 +16,14 @@
 - [Archive-It - Admin](https://partner.archive-it.org/)  
 - [Archive-It - Help Centre and Training](https://support.archive-it.org/hc/en-us/articles/208117886-Live-Archive-It-Training-Sessions-and-Webinars)  
 
-## Sitecore
+## Sitecore (ICAEW.com CMS)
 
 - [Sitecore](http://master.icaew.com/sitecore/login)   
+
+## Semaphore (taxonomy)
+
+- [Semaphore SmartLogic](https://cloud.smartlogic.com/spa/)
+- [Smartlogic portal](https://portal.smartlogic.com/)
 
 ## Tooling documentation
 - [ExifTool documentation](https://exiftool.org/exiftool_pod.html)  
