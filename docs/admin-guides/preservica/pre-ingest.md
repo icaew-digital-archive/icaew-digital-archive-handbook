@@ -88,7 +88,7 @@ We have multiple tools that achieve the objective of creating a Preservica SIP. 
         
     After using the script to rename the files, move on to Tool B.  
 
-    **Note: after running the script you should also copy the contents of the 'Title' field over to 'filename' in the csv file as Tool B uses this column to name the .opex files.**
+    **Note: after running the script you should also copy the contents of the 'Title' field over to 'filename' in the csv file as Tool B uses this column to name the .opex files. You will also need to re-add the file extensions if following this method.**
 
 * **Tool B**: uses the completed .csv to create unique .opex metadata files for each digital artefact in the folder. Including fixity and dublin core metadata. 
 
