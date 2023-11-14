@@ -2,7 +2,9 @@
 
 ICAEW uses [Smartlogic Semaphore](https://cloud.smartlogic.com/spa/) to auto-classify material using a custom made taxonomy. The _Classification & Language Service Client_ tool provides subject classification for documents stored locally. We have decided to include only subjects with a classification threshold of 48% and above - this matches what is happening on ICAEW.com. Topics can be removed at the descretion of the digital archivist if they feel the document has been assigned too many subjects.
 
-Script:
+Cloud-api-key can be found on the logins page.
+
+CLI example:
 
     java -jar Semaphore-CLSClient-5.6.3.jar --cloud-api-key= --url=https://cloud.smartlogic.com/svc/138b5bab-8ac4-45e0-b36f-815008f9921d/ --threshold=48 --csv-output-file subject-terms-output.csv input
 
