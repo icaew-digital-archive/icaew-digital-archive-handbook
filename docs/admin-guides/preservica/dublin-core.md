@@ -1,5 +1,7 @@
 # Dublin Core
 
+## General
+
 This page covers how ICAEW utilises Dublin Core in Preservica.
 
 General usage of Dublin Core can be found [here](https://www.dublincore.org/specifications/dublin-core/usageguide/2001-04-12/generic/).
