@@ -1,5 +1,16 @@
 # Post-ingest
 
+## Update Catalogue entries
+
+Post-ingest the ICAEW catalogue needs updating to include the new access point in Preservica. This is achieved by adding a new 856 field in Symphony.
+
+The formatting for adding an 856 field in Symphony is as follows:
+
+|aAvailable at the ICAEW Digital Repository: |u*hyperlink*
+
+(To be discussed)
+If we add unique identifiers alongside Dublin Core metadata, these should be added into the catalogue as well.
+
 **TODO: Write post-ingest processes**
 
 ## Appendix:
