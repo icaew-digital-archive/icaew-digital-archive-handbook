@@ -26,6 +26,7 @@ nav:
         - 'Web archives / Archive-It':
             - 'Accessing web captures offline': 'admin-guides/web-archiving/accessing-web-captures-offline.md'
             - 'Archiving Twitter': 'admin-guides/web-archiving/archiving-twitter.md'
+            - 'Browsertrix Custom Behaviors': 'admin-guides/web-archiving/browsertrix-behaviors.md'
             - 'Converting WARC to WACZ': 'admin-guides/web-archiving/converting-warc-to-wacz.md'
             - 'Downloading content from the Internet Archive Wayback Machine': 'admin-guides/web-archiving/downloading-content-from-IA.md'
             - 'Downloading videos from YouTube and other sites': 'admin-guides/web-archiving/downloading-videos-from-youtube.md'
