@@ -65,7 +65,7 @@ The .txt file should be ingested into Preservica at Admin/Private Repository/Web
 
 ### Wget crawl
 
-Information regarding the setup and use of browsertrix-crawler can be found on the [wget](./wget.md) page.
+Information regarding the use of wget can be found on the [wget](./wget.md) page.
 
 ### browsertrix-crawler
 
