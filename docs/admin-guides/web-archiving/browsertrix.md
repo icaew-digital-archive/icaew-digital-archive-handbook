@@ -71,6 +71,12 @@ YAML file example (single page):
         scopeType: "page-spa"
 
 
+## Post-crawl
+
+- A script callled [pages_json_log_validate.py](https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/browsertrix-crawler%20files%20and%20scripts/pages_json_log_validate.py) can be used to read the pages.json log file which can be found in the WACZ file to find any potentially missing URLs.
+- Ingest into Preservica at Admin/Private Repository/Web Captures/WACZ/WARC using the [AWS client](../preservica/aws-cli.md).
+
+
 ## Appendix:
 
 
