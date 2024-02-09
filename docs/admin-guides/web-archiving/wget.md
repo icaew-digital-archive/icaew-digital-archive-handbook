@@ -38,7 +38,10 @@ The following page outlines the process of using wget to create a secondary/back
 
         wget --load-cookies cookies.txt --keep-session-cookies --recursive --page-requisites --adjust-extension --span-hosts --convert-links --restrict-file-names=windows --domains volunteer.icaew.com --no-parent icaew.com/ --regex-type pcre --reject-regex '^(?!https:\/\/volunteer\.icaew\.com\/?(blog\/?.*|article\/?.*|$)).+$' --random-wait --retry-connrefused --waitretry=10 --tries=3 --timeout=15 volunteer.icaew.com 2>&1 | tee voluneteer-icaew-wget.log
 
-- When complete, zip the contents of the crawls into a single file and ingest into Preservica at Admin/Private Repository/Web Captures/Wget Captures
+## Post-crawl
+
+- A script callled [wget_log_reader.py](https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/wget_log_reader.py) can be used to read the log file to find any potentially missing URLs.
+- When complete, zip the contents of the crawls into a single file and ingest into Preservica at Admin/Private Repository/Web Captures/Wget Captures using the [AWS client](../preservica/aws-cli.md). Ensure that you include the original seed url .txt file.
 
 ## Appendix
 
