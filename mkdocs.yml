@@ -24,6 +24,8 @@ nav:
             - 'Filename conventions': 'admin-guides/preservica/filename-conventions.md'
             - 'Backing up Preservica locally': 'admin-guides/preservica/backing-up.md'
             - 'Downloading StreamAMG videos': 'admin-guides/preservica/downloading-streamamg-videos.md'
+            - 'Downloading YouTube videos (YouTube Data API)': 'admin-guides/preservica/downloading-youtube-videos-api.md'
+            - 'yt-dlp and youtube-dl': 'admin-guides/preservica/yt-dlp-youtube-dl.md'
         - 'Web archives / Archive-It':
             - 'Web crawl process overview': 'admin-guides/web-archiving/crawl-process-overview.md'
             - 'Accessing web captures offline': 'admin-guides/web-archiving/accessing-web-captures-offline.md'
@@ -32,7 +34,6 @@ nav:
             - 'Browsertrix custom behaviors': 'admin-guides/web-archiving/browsertrix-behaviors.md'
             - 'Converting WARC to WACZ': 'admin-guides/web-archiving/converting-warc-to-wacz.md'
             - 'Downloading content from the Internet Archive Wayback Machine': 'admin-guides/web-archiving/downloading-content-from-IA.md'
-            - 'Downloading videos from YouTube and other sites': 'admin-guides/web-archiving/downloading-videos-from-youtube.md'
             - 'Downloading WARC files from Archive-It': 'admin-guides/web-archiving/downloading-warcs-from-archive-it.md'
             - 'Monthly web captures': 'admin-guides/web-archiving/monthly-web-captures.md'
             - 'Scrapy': 'admin-guides/web-archiving/scrapy.md'
