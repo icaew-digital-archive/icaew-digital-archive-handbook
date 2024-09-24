@@ -1,160 +1,189 @@
-Here you will find an overview of the software currently installed on our digital archiving workstation.
 
-Currently the workstation is setup as dual-boot machine, running Windows and Ubuntu/BitCurator. Ubuntu/BitCurator is the primary OS. F12 to switch between the OS at boot.
+---
 
-Login details for the Windows and Ubuntu/BitCurator can be found on the [Logins page](../logins.md)
+## Overview of the installed software on the digital archiving workstation
 
-## Installation of Ubuntu/BitCurator on a new laptop
+This document provides an overview of the software currently installed on our digital archiving workstation.
 
-1. Download Ubuntu image from [https://ubuntu.com/tutorials/install-ubuntu-desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop).
-2. Create a bootable USB stick. Ubuntu already comes with software called Startup Disk Creator, however [balenaEtcher](https://www.balena.io/etcher/) is a good cross-platform option.
-3. Reboot lap and press F12 at boot to select the boot device. Select the USB stick.
-4. Follow installation process. Selectr "Install Ubuntu alongside Windows Boot Manager".
-5. If BitLocker is enabled, you may need to boot into Windows to disable it. This may require turning it on and off ([https://discourse.ubuntu.com/t/ubuntu-installation-on-computers-running-windows-and-bitlocker-turned-on/15338](  https://discourse.ubuntu.com/t/ubuntu-installation-on-computers-running-windows-and-bitlocker-turned-on/15338)).
-6. Install BitCurator using ther [Saltstack repository](https://github.com/bitcurator/bitcurator-salt).
+The workstation is configured as a dual-boot system running both Windows and Ubuntu/BitCurator, with Ubuntu/BitCurator serving as the primary operating system. To switch between the two at boot, press `F12`.
 
-## General software
-
-* [Ubuntu](https://ubuntu.com/download/desktop)  
-_Most web archiving tools have been developed for and/or work best with Linux._  
-
-* [BitCurator](https://bitcurator.net/)  
-_Installed on top of a fresh Ubuntu installation - includes many tools specific to digital archiving._  
-
-* [Citrix Workspace](https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html)  
-_For connecting to the ICAEW VDI via [https://www.mkportal.icaew.com](https://www.mkportal.icaew.com) or [https://www.lonportal.icaew.com/](https://www.lonportal.icaew.com/)_
-
-* [Python](https://www.python.org/downloads/)  
-_Comes installed with BitCurator. However, virtual environments may need to be installed via:_
-
-        sudo apt install python3.10-venv  
-        
-    _The creation of a virtual environment is via:_ 
-    
-        python3 -m venv venv  
-        
-    _Activating the virtual environment is via:_  
-        
-        . ./venv/bin/activate
-
-* [Node Version Manager](https://github.com/nvm-sh/nvm)  / Node.js  
-_nvm allows you to quickly install and use different versions of node via the command line. Node.js is an open-source, cross-platform JavaScript runtime environment. Installation instructions are at the Github repository. Install nvm by visiting the github page and using the install script. Install latest node and npm via:_
-
-        nvm install node
-
-* [yarn](https://github.com/yarnpkg/berry)  
-_Yarn is a modern package manager split into various packages. Used to build/test browsertrix-behaviors._
-
-        npm install -g yarn
-        yarn install  
-Errors when compiling behaviors.js is solved using:
-
-        export NODE_OPTIONS=--openssl-legacy-provide
+For login details to both Windows and Ubuntu/BitCurator, refer to the [Logins page](../logins.md).
 
 
-* [Puppeteer](https://pptr.dev/)  
-_Installed via:_  
+---
 
-        npm i puppeteer
+## Installing Ubuntu/BitCurator on a New Laptop
 
-* [Git](https://git-scm.com/download/linux)  
-_Comes installed with BitCurator. Software version control. Used for pulling and pushing [https://github.com/icaew-digital-archive](https://github.com/icaew-digital-archive) and the private repository of this handbook_    
-_Installed via:_  
+If you are setting up a new laptop, ensure Windows is installed first. Ubuntu/BitCurator will be installed alongside Windows in a dual-boot configuration.
 
-        sudo apt-get install git   
-_Setup name and email address in the config via:_  
+1. **Disable BitLocker (Mandatory)**:  
+   - If your system has BitLocker encryption enabled, you **must** disable it before proceeding with the installation of Ubuntu.
+   - Boot into Windows, go to the Control Panel, and search for "BitLocker." Select "Manage BitLocker" and turn it off. You may need to temporarily turn it on and then off again.
+   - For more detailed instructions, refer to [this guide](https://discourse.ubuntu.com/t/ubuntu-installation-on-computers-running-windows-and-bitlocker-turned-on/15338).
+  
+2. **Download Ubuntu**: Obtain the Ubuntu image from [this link](https://ubuntu.com/tutorials/install-ubuntu-desktop).
 
-        git config --global user.name "FIRST_NAME LAST_NAME"
+3. **Create a Bootable USB**: Use Ubuntu’s "Startup Disk Creator" or [balenaEtcher](https://www.balena.io/etcher/) as a cross-platform alternative to create a bootable USB stick.
 
-        git config --global user.email "MY_NAME@example.com"
+4. **Boot from USB**: Restart the laptop and press `F12` at boot to select the USB drive as the boot device.
 
+5. **Install Ubuntu**:  
+   - Follow the installation process and select "Install Ubuntu alongside Windows Boot Manager" when prompted.
 
-* [Docker](https://docs.docker.com/engine/install/ubuntu/)  
-_Comes installed with BitCurator. For running Docker containers. Used to run [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)_  
+6. **Install BitCurator**: Once Ubuntu is installed, proceed with installing BitCurator using the [SaltStack repository](https://github.com/bitcurator/bitcurator-salt).
 
-* [Chrome or Chromium browser](https://www.google.com/chrome/?brand=CHBD&brand=CHBD&gclid=EAIaIQobChMIyv6JoOqP-wIVGe3tCh2ROw8WEAAYASABEgLTovD_BwE&gclsrc=aw.ds)  
-_For use with [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
-
-* [VS Code](https://code.visualstudio.com/download)  
-_A text editor for writing code, running scripts, and pushing and pulling to Github._  
-_Useful plugins:_
-    * _Python_
-    * _Prettier_
-    * _Markdown All in One_
-
-* [AWS CLI](https://aws.amazon.com/cli/)  
-_For ingesting large files into Preservica._  
-
-* [Get cookies.txt LOCALLY browser extension](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)  
-_This extension exports cookies in Netscape or JSON format._
-
-* [Wget](https://www.gnu.org/software/wget/)  
-_Comes installed with BitCurator. A free software package for retrieving files using HTTP, HTTPS, FTP and FTPS, the most widely used Internet protocols._
-
-* [Thunar](https://docs.xfce.org/xfce/thunar/start)  
-_An easy to use bulk rename utility._
-
-        sudo apt install thunar
+---
 
 
-## Archiving specific software
+## General Software
 
-* [archiveweb.page](https://github.com/webrecorder/archiveweb.page)  
-_AA High-Fidelity Web Archiving Extension for Chrome and Chromium based browsers! Installed via AppImage on the releases page._  
+Below is a list of general software installed on the workstation:
 
-* [replayweb.page](https://github.com/webrecorder/replayweb.page)  
-_Serverless Web Archive Replay directly in the browser. Installed via AppImage on the releases page._
+- **[Ubuntu](https://ubuntu.com/download/desktop)**  
+  _Ubuntu is the core operating system, particularly suited for web archiving tools that work best in Linux environments._
 
-* [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)  
-_A high-fidelity browser-based crawler that runs in a single Docker container_  
-_Install/pull the docker image via:_  
+- **[BitCurator](https://bitcurator.net/)**  
+  _BitCurator is installed on top of a fresh Ubuntu installation. It includes numerous tools tailored for digital archiving._
 
-        docker pull webrecorder/browsertrix-crawler
+- **[Citrix Workspace](https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html)**  
+  _Used to connect to the ICAEW VDI via [MKPortal](https://www.mkportal.icaew.com) or [LonPortal](https://www.lonportal.icaew.com/). You may need to use an older version of the app. 23.3.0.32 is tested as working._
 
-* [OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF)  
-_OCR software. OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched._
+- **[Python](https://www.python.org/downloads/)**  
+  _Python is pre-installed with BitCurator. However, virtual environments can be installed using:_
+  ```bash
+  sudo apt install python3.10-venv
+  ```
+  _Create a virtual environment:_
+  ```bash
+  python3 -m venv venv
+  ```
+  _Activate the virtual environment:_
+  ```bash
+  . ./venv/bin/activate
+  ```
 
-* [ExifTool](https://github.com/exiftool/exiftool)  
-_ExifTool is a customizable set of Perl modules plus a full-featured command-line application for reading and writing meta information in a wide variety of files._
+- **[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm)** / **Node.js**  
+  _NVM allows quick installation and management of Node.js versions via the command line. Install NVM and the latest Node version using:_
+  ```bash
+  nvm install node
+  ```
 
-* [Heritrix](https://github.com/internetarchive/heritrix3)  
-_Heritrix is the Internet Archive's open-source, extensible, web-scale, archival-quality web crawler project._
+- **[yarn](https://github.com/yarnpkg/berry)**  
+  _A modern package manager used for building/testing `browsertrix-behaviors`._
+  ```bash
+  npm install -g yarn
+  yarn install
+  ```
+  _To solve compilation errors for `behaviors.js`:_
+  ```bash
+  export NODE_OPTIONS=--openssl-legacy-provider
+  ```
 
-* [youtube-dl](https://github.com/ytdl-org/youtube-dl)  
-_youtube-dl is a command-line program to download videos from YouTube.com and a few more sites._
-_Installed via:_
+- **[Puppeteer](https://pptr.dev/)**  
+  _Install Puppeteer via:_
+  ```bash
+  npm i puppeteer
+  ```
 
-        pip install youtube-dl
+- **[Git](https://git-scm.com/download/linux)**  
+  _Pre-installed with BitCurator. Git is essential for version control. Set up Git with your name and email:_
+  ```bash
+  git config --global user.name "FIRST_NAME LAST_NAME"
+  git config --global user.email "MY_NAME@example.com"
+  ```
 
-* [py-wacz](https://github.com/webrecorder/py-wacz)  
-_py-wacz is a Python module and command line utility for working with web archive data using the WACZ format specification._
+- **[Docker](https://docs.docker.com/engine/install/ubuntu/)**  
+  _Pre-installed with BitCurator. Docker is used to run containers, including [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
 
+- **[Google Chrome or Chromium](https://www.google.com/chrome/)**  
+  _Required for use with [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
 
-* [py-wasapi-client](https://github.com/unt-libraries/py-wasapi-client)  
-_A client for the Archive-It And Webrecorder WASAPI Data Transfer API. Used to download WARC files from Archive-It._
+- **[Visual Studio Code (VS Code)](https://code.visualstudio.com/download)**  
+  _A code editor used for scripting and GitHub integration. Recommended plugins include:_
 
-* [twarc](https://github.com/DocNow/twarc)  
-_Not currently in-use. twarc is a command line tool and Python library for collecting and archiving Twitter JSON data via the Twitter API._
-_Installed via:_
+  - Python
+  - Prettier
+  - Markdown All in One
 
-        pip install twarc
+- **[AWS CLI](https://aws.amazon.com/cli/)**  
+  _Used for ingesting large files into Preservica._
 
-* [snscrape](https://github.com/JustAnotherArchivist/snscrape)  
-_Not currently in-use. snscrape is a scraper for social networking services (SNS). It scrapes things like user profiles, hashtags, or searches and returns the discovered items, e.g. the relevant posts._
-_Installed via:_
+- **[Get cookies.txt LOCALLY (browser extension)](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)**  
+  _Exports cookies in Netscape or JSON format._
 
-        pip install snscrape
+- **[Wget](https://www.gnu.org/software/wget/)**  
+  _Pre-installed with BitCurator. Wget is used to retrieve files via HTTP, HTTPS, FTP, and FTPS._
 
-* [Brozzler](https://github.com/internetarchive/brozzler)  
-_Not currently in-use. A distributed browser-based web crawler._
+- **[Thunar](https://docs.xfce.org/xfce/thunar/start)**  
+  _A bulk file rename utility. Install with:_
+  ```bash
+  sudo apt install thunar
+  ```
 
+---
 
-## ICAEW Digital Archive Handbook specific software
+## Archiving-Specific Software
 
-This ICAEW Digital Archive Handbook is produced using:
+The following tools are specialized for digital archiving:
 
-* [MkDocs](https://www.mkdocs.org)  
-_A static site generator that's geared towards building project documentation_
+- **[archiveweb.page](https://github.com/webrecorder/archiveweb.page)**  
+  _A high-fidelity web archiving extension for Chrome/Chromium, installed via AppImage._
 
-* [Material](https://squidfunk.github.io/mkdocs-material/)  
-_Material theme for MkDocs_
+- **[replayweb.page](https://github.com/webrecorder/replayweb.page)**  
+  _Serverless web archive replay directly in the browser, installed via AppImage._
+
+- **[browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)**  
+  _A high-fidelity browser-based crawler running in Docker. Install the Docker image via:_
+  ```bash
+  docker pull webrecorder/browsertrix-crawler
+  ```
+
+- **[OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF)**  
+  _Adds OCR text layers to scanned PDFs, enabling text searchability._
+
+- **[ExifTool](https://github.com/exiftool/exiftool)**  
+  _A command-line tool for reading and writing metadata in various file formats._
+
+- **[Heritrix](https://github.com/internetarchive/heritrix3)**  
+  _An open-source web-scale crawler for web archiving, developed by the Internet Archive._
+
+- **[youtube-dl](https://github.com/ytdl-org/youtube-dl)**  
+  _A command-line program to download videos from YouTube and other websites._
+  ```bash
+  pip install youtube-dl
+  ```
+
+- **[py-wacz](https://github.com/webrecorder/py-wacz)**  
+  _A Python module for working with web archive data in WACZ format._
+
+- **[py-wasapi-client](https://github.com/unt-libraries/py-wasapi-client)**  
+  _A client for downloading WARC files from Archive-It and Webrecorder's WASAPI Data Transfer API._
+
+- **[twarc](https://github.com/DocNow/twarc)**  
+  _Not in current use. A tool for collecting and archiving Twitter data._
+  ```bash
+  pip install twarc
+  ```
+
+- **[snscrape](https://github.com/JustAnotherArchivist/snscrape)**  
+  _Not in current use. A scraper for social networking services like Twitter._
+  ```bash
+  pip install snscrape
+  ```
+
+- **[Brozzler](https://github.com/internetarchive/brozzler)**  
+  _Not in current use. A distributed browser-based web crawler._
+
+---
+
+## ICAEW Digital Archive Handbook-Specific Software
+
+This handbook is produced using the following tools:
+
+- **[MkDocs](https://www.mkdocs.org)**  
+  _A static site generator tailored for building project documentation._
+
+- **[Material](https://squidfunk.github.io/mkdocs-material/)**  
+  _Material theme for MkDocs, enhancing the visual presentation of documentation._
+
+---
