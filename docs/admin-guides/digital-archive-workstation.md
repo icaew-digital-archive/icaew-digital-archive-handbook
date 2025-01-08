@@ -62,7 +62,32 @@ Below is a list of general software installed on the workstation:
   . ./venv/bin/activate
   ```
 
-- **[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm)** / **Node.js**  
+- **[Git](https://git-scm.com/download/linux)**  
+  _Pre-installed with BitCurator. Git is essential for version control. Set up Git with your name and email:_
+  ```bash
+  git config --global user.name "FIRST_NAME LAST_NAME"
+  git config --global user.email "MY_NAME@example.com"
+  ```
+
+- **[Visual Studio Code (VS Code)](https://code.visualstudio.com/download)**  
+  _A code editor used for scripting and GitHub integration. Recommended plugins include:_
+    - Python
+    - Prettier
+    - Markdown All in One
+
+
+- **[Docker](https://docs.docker.com/engine/install/ubuntu/)**  
+  _Pre-installed with BitCurator. Docker is used to run containers, including [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
+
+- **[Google Chrome or Chromium](https://www.google.com/chrome/)**  
+  _Required for use with [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
+
+
+- **[AWS CLI](https://aws.amazon.com/cli/)**  
+  _Used for ingesting large files into Preservica._
+
+
+  - **[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm)** / **Node.js**  
   _NVM allows quick installation and management of Node.js versions via the command line. Install NVM and the latest Node version using:_
   ```bash
   nvm install node
@@ -84,29 +109,6 @@ Below is a list of general software installed on the workstation:
   ```bash
   npm i puppeteer
   ```
-
-- **[Git](https://git-scm.com/download/linux)**  
-  _Pre-installed with BitCurator. Git is essential for version control. Set up Git with your name and email:_
-  ```bash
-  git config --global user.name "FIRST_NAME LAST_NAME"
-  git config --global user.email "MY_NAME@example.com"
-  ```
-
-- **[Docker](https://docs.docker.com/engine/install/ubuntu/)**  
-  _Pre-installed with BitCurator. Docker is used to run containers, including [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
-
-- **[Google Chrome or Chromium](https://www.google.com/chrome/)**  
-  _Required for use with [browsertrix-crawler](https://github.com/webrecorder/browsertrix-crawler)._
-
-- **[Visual Studio Code (VS Code)](https://code.visualstudio.com/download)**  
-  _A code editor used for scripting and GitHub integration. Recommended plugins include:_
-
-  - Python
-  - Prettier
-  - Markdown All in One
-
-- **[AWS CLI](https://aws.amazon.com/cli/)**  
-  _Used for ingesting large files into Preservica._
 
 - **[Get cookies.txt LOCALLY (browser extension)](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)**  
   _Exports cookies in Netscape or JSON format._
@@ -182,8 +184,14 @@ This handbook is produced using the following tools:
 
 - **[MkDocs](https://www.mkdocs.org)**  
   _A static site generator tailored for building project documentation._
+  ```bash
+  pip install mkdocs
+  ```
 
 - **[Material](https://squidfunk.github.io/mkdocs-material/)**  
   _Material theme for MkDocs, enhancing the visual presentation of documentation._
+  ```bash
+  pip install mkdocs-material
+  ```
 
 ---
