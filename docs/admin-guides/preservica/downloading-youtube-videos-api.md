@@ -39,7 +39,7 @@ Here’s a summary of the entire process, from creating the app in **Google Clou
       pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client yt-dlp
       ```
 
-### 4. **Write and Run the Python Script**
+### 4. **Run the Python Script**
 
    Use the following script to authenticate and list videos from the YouTube Brand Account:
 
