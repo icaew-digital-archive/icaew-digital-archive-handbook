@@ -15,6 +15,8 @@
   - file analysis
   - checksums
 
+- TEST EDIT - CRAIG :)
+
 - Run Brunnhilde using the following in cmd:
 
             brunnhilde.py source destination
