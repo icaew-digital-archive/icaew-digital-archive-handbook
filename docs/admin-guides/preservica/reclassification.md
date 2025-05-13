@@ -8,7 +8,6 @@
 [NOTE: Add a "Best Practices" section]
 
 # Reclassification Workflow
-TO BE EDITED*
 
 The following document outlines the reclassification workflow.
 
