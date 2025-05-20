@@ -16,6 +16,7 @@ nav:
             - 'Standard ingest workflow': 'admin-guides/preservica/standard-ingest-workflow.md'
             - 'Appraisal': 'admin-guides/preservica/appraisal.md'
             - 'Ingest workflow': 'admin-guides/preservica/ingest-workflow.md'
+            - 'Post Ingest' : 'admin-guides/preservica/post-ingest.md'
             - 'Dublin Core': 'admin-guides/preservica/dublin-core.md'
             - 'Uploading large files via AWS CLI': 'admin-guides/preservica/aws-cli.md'
             - 'Filename conventions': 'admin-guides/preservica/filename-conventions.md'
