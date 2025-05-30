@@ -31,6 +31,23 @@ Brunnhilde provides the three following features:
   `destination` being the path to destination for reports  
   Check for any complications such as 0 sized files and duplicates.
 
+## Check the G:Drive
+
+When we appraise a collection of documents it is important to check for similar resources in the G:Drive from the VDI.
+
+They can be found here:
+
+```G:\MD\LIS\LIBRARY AND INFORMATION SERVICE\ICAEW digital repository```
+
+The G:Drive is a place in which documents have already been sorted into hierarchies, they may not always have a full collection but can be useful for laying the groundwork to create a series in Preservica.
+
+When searching the G:Drive look for duplicates and additional resources for the collections you are appraising.
+
+If duplicates are found look to remove them from the G:Drive after ingest.
+
+If additional resources are found, look to transfer them from the VDI onto your local machine using the Digital Archive Sharepoint.
+
+
 ## Creating a series
 
 Unfortunately there is no one size fits all for creating an archival series.
