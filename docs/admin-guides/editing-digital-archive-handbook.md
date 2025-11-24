@@ -1,7 +1,8 @@
 # Editing the ICAEW Digital Archive Handbook
 
 ## Overview
-This guide provides comprehensive instructions for editing and maintaining the ICAEW Digital Archive Handbook, which serves as the central resource for digital preservation and web archiving activities at ICAEW.
+
+> **Purpose:** This guide provides comprehensive instructions for editing and maintaining the ICAEW Digital Archive Handbook, which serves as the central resource for digital preservation and web archiving activities at ICAEW.
 
 ## Tools and Technologies
 
@@ -15,7 +16,8 @@ _Material theme for MkDocs_
 ### Development Environment Setup
 
 #### Python Environment
-MkDocs and Material require a Python installation. Good practice is to initialize a Python virtual environment before installing the libraries:
+
+> **Tip:** MkDocs and Material require a Python installation. Good practice is to initialize a Python virtual environment before installing the libraries:
 
 ```bash
 python3 -m venv venv
@@ -53,6 +55,33 @@ pip install mkdocs-material
   For managing Python dependencies
 
 ## Development Workflow
+
+### GitHub Workflow
+When contributing to the handbook, follow these steps to manage your changes:
+
+1. **Create a branch from `master`:**
+   ```bash
+   git checkout -b craig
+   ```
+
+2. **Make your changes (edit, stage, commit):**
+
+    Note: This section will usually be done in the GUI of VSCode rather than via these commands.
+
+    ```bash
+    git add .
+    git commit -m "Add awesome feature"
+    ```
+
+3. **Push your branch to GitHub:**
+   ```bash
+   git push -u origin craig
+   ```
+
+4. **Keep your branch up to date with `master`:**
+   ```bash
+   git fetch origin && git merge origin/master && git push
+   ```
 
 ### Local Development
 To edit and preview changes in real-time:

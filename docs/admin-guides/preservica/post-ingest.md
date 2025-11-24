@@ -1,31 +1,38 @@
-# Post-Ingest
+# Post Ingest
 
-[NOTE: Add a "Verification Steps" section]
-[NOTE: Add a "Quality Checks" section]
-[NOTE: Add a "Metadata Review" section]
-[NOTE: Add a "Access Testing" section]
-[NOTE: Add a "Documentation" section]
-[NOTE: Add a "Troubleshooting" section]
+> **Purpose:** This document outlines the post-ingest workflow. This workflow is important for:
+> - Ensuring the quality of metadata
+> - Cleaning up the tools we use after ingest (for example, Preservica and Sharepoint)
+> - Linking the resources to the broader ICAEW information ecosphere
 
-## Update Catalogue entries
 
-Post-ingest the ICAEW catalogue needs updating to include the new access point in Preservica. This is achieved by adding a new 856 field in Symphony.
+## Quality Assurance
 
-The formatting for adding an 856 field in Symphony is as follows:
+> **Purpose:** Quality Assurance is currently a manual process. Metadata should be filled out carefully and precisely during ingest. Quality Assurance is a process which is done throughout the broader ingest workflow. We want to be as sure as possible that metadata is correct and accurate.
 
-|aAvailable at the ICAEW Digital Repository: |u*hyperlink*
+**During Post-Ingest, work through the following steps:**
 
-(To be discussed)
-If we add unique identifiers alongside Dublin Core metadata, these should be added into the catalogue as well.
+1. **Check for Completeness:**
+   - Ensure all required metadata fields are filled in (e.g., title, author, date, format, keywords)
 
-**TODO: Write post-ingest processes**
+2. **Validate Accuracy:**
+   - Confirm dates, names, and other values are correct and consistent with the source material
 
-## Appendix:
+3. **Enforce Consistency:**
+   - Ensure resources adhere to file naming conventions and Dublin Core style guide
 
-Processes that are no longer used.
+## Clean Preservica and Sharepoint
 
-- **Semaphore CLS Client and semaphore-subject-import.py**
+> **Purpose:** When you are sure of the quality of metadata, it is time to clean up after the ingest.
 
-  The semaphore-subject-import.py script combines the CSV output from the Semaphore CLS Client, negating the need for copy and pasting from one CSV to the other. Usage is as follows:
+**Work through the following steps:**
 
-        semaphore-subject-import.py semaphore_csv dublin_core_csv csv_output
+1. During the ingest workflow, we have created a bucket in the ingest area of Preservica. After the ingest has been completed, the series needs to be moved to its correct spot within the Root structure of Preservica
+2. The remaining bucket needs to be removed and sent to the recycling bin in Preservica
+3. Add to the description field of the bucket that you have completed the ingest with a date stamp: `yyyymmdd`
+
+> **Note:** Often when ingesting materials, we have received the resources from the G:Drive within the VDI and transferred them out using Sharepoint. The previous steps can be used to clean up Sharepoint after ingest.
+
+## Add to Catalogue
+
+> **Note:** Needs to be discussed with Niki, Janet and Kim.

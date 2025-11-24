@@ -1,39 +1,58 @@
-# Dublin Core
-
-[NOTE: Add a "Overview" section]
-[NOTE: Add a "Required Fields" section]
-[NOTE: Add a "Optional Fields" section]
-[NOTE: Add a "Format Guidelines" section]
-[NOTE: Add a "Validation" section]
-[NOTE: Add a "Best Practices" section]
+# Metadata Style Guide
 
 ## General
 
-This page covers how ICAEW utilises Dublin Core in Preservica.
+> **Purpose:** This page covers how ICAEW applies metadata in Preservica.
 
-General usage of Dublin Core can be found [here](https://www.dublincore.org/specifications/dublin-core/usageguide/2001-04-12/generic/).
 
-| DC Terms    | Description - General Use | Description - ICAEW Specific Use |
-| :---        |   ----   | :---- |
-| Title | The name given to the resource. | Self-explanatory. |
-| Creator | An entity primarily responsible for making the content. | Self-explanatory. For ICAEW publications this will be 'ICAEW'. |
-| Subject | The topic of the content of the resource. | The topic of the content of the resource. Often a resource has multiple topics. These will usually be topics provided by Semaphore's auto-classification and thus the topics are from ICAEW's taxonomy.  |
-| Description | An account of the content of the resource. | Self-explanatory. |
-| Publisher | The entity responsible for making the resource available. | Self-explanatory. For ICAEW publications this will be 'ICAEW'. |
-| Contributor | **TODO** | **TODO** |
-| Date | A date associated with an event in the life cycle of the resource. | In the format: 2005-10-01 | 
-| Type | The nature or genre of the content of the resource. | ICAEW uses two type fields. This first type field contains DC recommended [DCMI Type Vocabulary](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7) such as Text or MovingImage etc. |
-| Type | The nature or genre of the content of the resource. | This second type field contains the taxonomy Content Type. |
-| Format | The physical or digital manifestation of the resource. | The original file format being ingest, for example pdf or mp4 etc. |
-| Identifier | **TODO** | **TODO** |
-| Source | **TODO** | **TODO** |
-| Language | A language of the intellectual content of the resource. | Will normally be 'en' for English ICAEW publications. |
-| Relation | A reference to a related resource. | A reference to a related resource. |
-| Coverage | **TODO** | **TODO** |
-| Rights | **TODO** | **TODO** |
+## Asset XIP
 
-## Notes for specific material that may be different to the general guidance
+| **XIP Terms**    | **Description** | **Examples** |
+| :--------------------- | -------------------------------- | -------- |
+| **entity.title** | **General Use** <ul><li>The name given to the resource.</li></ul>**ICAEW Specific Use**<ul><li>The title as found within the document.</li><li>Use sentence case (capitalize first word only).</li><li>Acronyms (e.g., OECD, IFRS, FRC, HMRC, UK, VAT) and proper nouns must always be all capitalised, even at the start or after a colon.</li><li>Separate title and subtitle with a colon (replace em-dashes, en-dashes, or hyphens with a colon).</li><li>Do not capitalize the first letter after a colon.</li><li>Do not use "&"; use "and".</li><li>Use question marks where applicable, but do not end titles with full stops.</li><li>Order and format - title: subtitle, issue/volume, date.</li><li>Dates must be in a readable format like this: "15th January 2024".</li><li>Include if the document is revised or time-limited.</li><li>Use only standard ASCII characters (no smart quotes or special symbols).</li></ul> | <ul><li><i>Economia, Issue 1</i></li><li><i>International consistency: global challenges initiative, providing direction</i></li><li><i>Preface to international reporting standards, TECH 02/02</i></li><li><i>OECD discussion draft on the application of tax treaties to state-owned entities: including sovereign wealth funds, TAXREP 4/10, 22nd January 2010</i></li><li><i>Audit firm governance: a project for the Financial Reporting Council, Ernst and Young LLP response, 3rd February 2009</i></li><li><i>Technical release: IFRS 9 implementation, TECH 01/24, 15th January 2024</i></li></ul> |
+| **entity.description** | **General Use** <ul><li>An account of the content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Use only if an existing summary or description is present.</li><li>Briefly summarize the content if available (do not create new summaries manually).</li><li>Listing of contents may be used, with each item separated by a semicolon.</li><li>Always end the description with a full stop; question marks are also allowed.</li></ul> | <ul><li><i>Technical guidance on implementing IFRS 9 for financial instruments.</i></li><li><i>This Audit and Assurance Faculty guidance sets out the steps auditors need to take to ascertain whether material uncertainty disclosures in relation to going concern in the financial statements are adequate, and how these disclosures will then impact the audit report. It supplements the guidance in the faculty's audit report guides.</i></li><li><i>This guide provides an overview of blockchain technology, including its key features; potential use cases; challenges to widespread adoption; a glossary of terms; and relevant resources. Includes a case study on Ripple and discusses both the strengths and limitations of blockchain for accountants.</i></li></ul> |
 
-### TODO - Example #1
+## Folder XIP
 
-### TODO - Example #2
+| **XIP Terms**    | **Description** | **Examples** |
+| :--------------------- | -------------------------------- | -------- |
+| **entity.title** | <ul><li>Acronyms and proper nouns should be all capitalised appropriately.</li><li>Use sentence case.</li><li>Uses user-friendly names (i.e. prioritise access for folder level entity.title.).</li><li>Folders can be dated if they contain assets collected by date.</li></ul> | <ul><li><i>Economia magazine</i></li><li><i>Economia, 2019</i></li></ul> |
+| **entity.description** | **General Use** <ul><li>An account of the content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>This field for folders is used to provide a general description of the collection within the folder.</li><li>Include a date range and relevant title history.</li><li>Do not use special punctuation.</li></ul> | <ul><li><i>Economia is the journal of ICAEW (previously ICAEW updates were published in Accountancy). Economia ran from 2012 to 2019. Quarterly replaced Economia.</i></li></ul> |
+
+## Custom ICAEW Schema
+
+| **Custom ICAEW Schema Terms**    | **Description** | **Examples** |
+| :--------------------- | -------------------------------- | -------- |
+| **icaew:ContentType** | <ul><li>We use a controlled vocabulary defined by the ICAEW's taxonomy.</li></ul> |  Must use one of the following controlled vocabulary terms (exact spelling and case):</br> <ul><li>Annual report</li><li>Article</li><li>Committee papers</li><li>Database</li><li>eBook</li><li>eBook chapter</li><li>eLearning module</li><li>Event</li><li>Form</li><li>Helpsheets and support</li><li>Hub page</li><li>ICAEW consultation and response</li><li>Interview</li><li>Journal</li><li>Learning material</li><li>Legal precedent</li><li>Library book</li><li>Listing</li><li>Newsletter</li><li>No content type</li><li>Podcast</li><li>Press release</li><li>Promotional material</li><li>Regional news</li><li>Regulations</li><li>Report</li><li>Representation</li><li>Research guide</li><li>Speech or presentation</li><li>Synopsis</li><li>Technical release</li><li>Thought leadership report</li><li>Webinar</li><li>Website</li></ul> </br> If the content type cannot be determined from the document, use "No content type".|
+| **icaew:InternalReference** | <ul><li>Format: **YYYYMMDD-Document-Name**</li><li>Use title case.</li><li>Allowed characters: letters (A-Z, a-z), numbers (0-9), hyphens (-). <li>Replace spaces with hyphens. No special characters. **&** should be replaced with "and" if required.</li><li>Acronyms should be all capitals.</li><li>The YYYYMMDD is to be taken from within the document itself and not the document properties.</li><li>Use 00 to indicate absence of days/months/years. This field can begin with 00000000.</li><li>Include the document title and the faculty contributor, where applicable.</li><li>Include unique identifier. This will normally be an issue or reference number.</li></ul> | <ul><li><i>20120200-Economia-Issue-1</i></li><li><i>20101000-International-Consistency</i></li><li><i>20020117-TECH-02-02</i></li></ul> |
+| **icaew:Notes** | <ul><li>At folder level this is used for internal note-taking purposes.</li><li>For folders used exclusively for deletion, this field explains reason for use and why it is to be deleted.</li><li>For collections, use this field to include information on who requested the ingest and who did the ingest.</li><li>This field is to be used to describe the providence of the work.</li></ul> |  <ul><li>**EXAMPLE HERE?**</li></ul>
+
+
+## Asset Dublin Core
+
+| **DC Terms** | **Description** | **Examples** |
+| :------- | -------------------------------- | -------- |
+| **Title** | Use same guidance as in entity.title | |
+| **Creator** |  **General Use** <ul><li>An entity primarily responsible for making the content.</li></ul> **ICAEW Specific Use**<ul><li>The creator is the author as credited in the document itself, not in its properties.</li><li>Multiple creators are allowed.</li><li>Preference for Creator is author FirstName LastName, internal faculty, and then institution (most often ICAEW).</li></ul> | <ul><li><i>John Doe</i></li><li><i>Financial Services Faculty</i></li><li><i>Deloitte</i></li><li><i>ICAEW</i></li></ul> |
+| **Subject** | **General Use** <ul><li>The topic of the content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Multiple dc:subject fields are allowed.</li><li>Subjects are selected from ICAEW’s internal classification system (Semaphore).</li><li>Each document should be assigned 10 relevant subjects.</li></ul> |  |
+| **Description** | Use same guidance as in entity.title | |
+| **Publisher** | **General Use** <ul><li>The entity responsible for making the resource available.</li></ul> **ICAEW Specific Use**<ul><li>Preference for external publishers, otherwise use ICAEW.</li><li>Check ICAEW Library catalogue for support.</li></ul> | <ul><li><i>Progressive Content</i></li><li><i>ICAEW</i></li></ul> |
+| **Contributor** | **General Use** <ul><li>An entity responsible for making contributions to the resource.</li></ul> **ICAEW Specific Use**<ul><li>This field is for external institutes.</li><li>Use the external institute’s full title.</li></ul> | <ul><li><i>Deloitte</i></li><li><i>The Pensions Regulator</i></li></ul> |
+| **Date** | **General Use** <ul><li>A date associated with an event in the life cycle of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Use the format: YYYY-MM-DD.</li><li>If the full date is unknown, use month and year (YYYY-MM) or just year (YYYY).</li></ul> | <ul><li><i>2002-01-17</i></li><li><i>2012-02</i></li><li><i>2022</i></li></ul> |
+| **Type** | **General Use** <ul><li>The nature or genre of the content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Contains DC recommended <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7">DCMI Type Vocabulary</a> such as Text or Moving Image etc.</li><li>Use title case.</li></ul> | <ul><li><i>Text</i></li><li><i>Moving Image</i></li><li><i>Audio</i></li><li><i>Interactive Resource</i></li></ul> |
+| **Format** | **General Use** <ul><li>The physical or digital manifestation of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Use the file's extension to indicate its format.</li><li>Use lowercase without preceding ".".</li></ul> | <ul><li><i>doc</i></li><li><i>xlsx</i></li><li><i>csv</i></li><li><i>pdf</i></li><li><i>mp4</i></li></ul> |
+| **Identifier** | **General Use** <ul><li>An unambiguous reference to the resource within a given context.</li></ul> **ICAEW Specific Use**<ul><li>Examples of used Identifiers: ISBN, URLs, issue numbers, unique identifiers.</li><li>Multiple identifiers are allowed.</li></ul> | <ul><li><i>https://www.icaew.com/technical/tax/tax-faculty/taxline</i></li><li><i>ISBN 978-1-78915-123-4</i></li><li><i>TECH 12/10 AAF</i></li><li><i>0_hbyzwx9t
+</i></li></ul> |
+| **Source** | **General Use** <ul><li>A related resource from which the described resource is derived.</li></ul> **ICAEW Specific Use**<ul><li>Primarily used if an item has been digitised and has an original source since it is not a born-digital item.</li></ul> | <ul><li><i>Digitised</i></li></ul> |
+| **Language** | **General Use** <ul><li>A language of the intellectual content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Will normally be 'en' for English ICAEW publications.</li></ul> | <ul><li><i>en</i></li><li><i>ar</i></li><li><i>cn</i></li></ul> |
+| **Relation** | **General Use** <ul><li>A reference to a related resource.</li></ul> **ICAEW Specific Use**<ul><li>Populate with the name of the parent folder where the document resides.</li><li>Helps track document relationships within the archive hierarchy.</li><li>Documents linked into a separate parent folder/collection would have two Relation fields.</li></ul> | <ul><li><i>Economia</i></li><li><i>Audit Monitoring Report</i></li><li><i>Faculty Serials</i></li></ul> |
+| **Coverage** | **General Use** <ul><li>The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</li></ul> **ICAEW Specific Use**<ul><li>ICAEW does not currently use this field, maybe in future.</li></ul>|  |
+| **Rights** | **General Use** <ul><li>Information about rights held in and over the resource.</li></ul> **ICAEW Specific Use**<ul><li>ICAEW does not currently use this field, maybe in future. Rights information can be found within documents.</li></ul>|  |
+
+## Folder Dublin Core
+
+| **DC Terms** | **Description** | **Examples** |
+| :------- | -------------------------------- | ------- |
+| **Title** | **General Use** <ul><li>The name given to the resource.</li></ul> **ICAEW Specific Use**<ul><li>Use title case.</li><li>No special punctuation.</li><li>Use access-friendly titles and use commas to break between title and dates.</li></ul> | <ul><li><i>Economia, 2019</i></li><li><i>Audit Monitoring Report</i></li><li><i>Faculty Serials</i></li></ul> |
+| **Description** | **General Use** <ul><li>An account of the content of the resource.</li></ul> **ICAEW Specific Use**<ul><li>This field for folders is used to provide a general description of the collection within the folder.</li><li>Include a date range and relevant title history.</li><li>Do not use special punctuation.</li></ul> | <ul><li><i>Economia is the journal of ICAEW (previously ICAEW updates were published in Accountancy). Economia ran from 2012 to 2019. Quarterly replaced Economia.</i></li></ul> |
+| **Date** | **General Use** <ul><li>A date associated with an event in the life cycle of the resource.</li></ul> **ICAEW Specific Use**<ul><li>Date ranges should be included in the parent folder, using YYYY-MM-DD.</li><li>If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used.</li><li>Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.</li><li>Either the start or end date may be missing.</li></ul> | **TO BE DECIDED!(?)** <ul><li><i>2012 - 2019</i></li><li><i>2012 / 2019</i></li></ul> |
