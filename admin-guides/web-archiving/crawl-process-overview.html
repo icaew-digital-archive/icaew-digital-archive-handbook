@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/admin-guides/web-archiving/crawl-process-overview.html">
+      
+      
+        <link rel="prev" href="../preservica/archived-pages.html">
+      
+      
+        <link rel="next" href="wget.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Web crawl process overview - ICAEW Digital Archive Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-archiving-process-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-header__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICAEW Digital Archive Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web crawl process overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-tabs__link">
+        User guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../preservica/standard-ingest-workflow.html" class="md-tabs__link md-tabs__link--active">
+        Admin guides
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../useful-resources.html" class="md-tabs__link">
+      Useful resources
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-nav__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ICAEW Digital Archive Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          User guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-nav__link">
+        Why digital preservation and web-archiving?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/overview.html" class="md-nav__link">
+        Overview of the ICAEW Digital Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/preservica-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/accessing-preservica.html" class="md-nav__link">
+        Accessing and searching Preservica
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Web archives (via Preservica and Archive-It)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives (via Preservica and Archive-It)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/web-archive-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/accessing-the-web-archives.html" class="md-nav__link">
+        Accessing and searching the web archives
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Admin guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Admin guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/standard-ingest-workflow.html" class="md-nav__link">
+        Standard ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/appraisal.html" class="md-nav__link">
+        Appraisal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/ingest-workflow.html" class="md-nav__link">
+        Ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/post-ingest.html" class="md-nav__link">
+        Post Ingest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/dublin-core.html" class="md-nav__link">
+        Dublin Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/aws-cli.html" class="md-nav__link">
+        Uploading large files via AWS CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/filename-conventions.html" class="md-nav__link">
+        Filename conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/backing-up.html" class="md-nav__link">
+        Backing up Preservica locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/downloading-streamamg-videos.html" class="md-nav__link">
+        Downloading StreamAMG videos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/downloading-youtube-videos-api.html" class="md-nav__link">
+        Downloading YouTube videos (YouTube Data API)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/yt-dlp-youtube-dl.html" class="md-nav__link">
+        yt-dlp and youtube-dl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/archived-pages.html" class="md-nav__link">
+        Archived pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Web archives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web crawl process overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="crawl-process-overview.html" class="md-nav__link md-nav__link--active">
+        Web crawl process overview
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    High-level overview
+  </a>
+  
+    <nav class="md-nav" aria-label="High-level overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preservica-folder-structure" class="md-nav__link">
+    Preservica folder structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-overview" class="md-nav__link">
+    Process Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-crawl-processes" class="md-nav__link">
+    Pre-crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sitemap" class="md-nav__link">
+    1) Sitemap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-request-a-list-of-templates-and-do-a-template-crawl" class="md-nav__link">
+    2) Request a list of templates and do a template crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sub-domain-discovery" class="md-nav__link">
+    3) Sub-domain discovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crawl-processes" class="md-nav__link">
+    Crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-media-library-download" class="md-nav__link">
+    1) Media library download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-wget-crawl" class="md-nav__link">
+    2) wget crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-browsertrix-crawler-logged-in-public-crawls" class="md-nav__link">
+    3) Browsertrix-crawler - logged-in / public crawls
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-crawl-processes" class="md-nav__link">
+    Post-crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quality-assurance-and-verification" class="md-nav__link">
+    1) Quality Assurance and Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-patch-crawls" class="md-nav__link">
+    2) Patch crawls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ingest-to-preservica" class="md-nav__link">
+    3) Ingest to Preservica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-write-basic-metadata-in-preservica" class="md-nav__link">
+    4) Write basic metadata in Preservica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-documentation" class="md-nav__link">
+    5) Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-upload-public-icaewcom-capture-to-archive-it" class="md-nav__link">
+    6) Upload public ICAEW.com capture to Archive-It
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wget.html" class="md-nav__link">
+        Wget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="browsertrix.html" class="md-nav__link">
+        Browsertrix-crawler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="browsertrix-behaviors.html" class="md-nav__link">
+        Browsertrix custom behaviors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="monthly-web-captures.html" class="md-nav__link">
+        Monthly web captures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendix.html" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-archive-workstation.html" class="md-nav__link">
+        Digital archiving workstation setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editing-digital-archive-handbook.html" class="md-nav__link">
+        Editing the ICAEW Digital Archive Handbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting.html" class="md-nav__link">
+        Reporting / Statistics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-resources.html" class="md-nav__link">
+        Useful resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-overview" class="md-nav__link">
+    High-level overview
+  </a>
+  
+    <nav class="md-nav" aria-label="High-level overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preservica-folder-structure" class="md-nav__link">
+    Preservica folder structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-overview" class="md-nav__link">
+    Process Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-crawl-processes" class="md-nav__link">
+    Pre-crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sitemap" class="md-nav__link">
+    1) Sitemap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-request-a-list-of-templates-and-do-a-template-crawl" class="md-nav__link">
+    2) Request a list of templates and do a template crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sub-domain-discovery" class="md-nav__link">
+    3) Sub-domain discovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crawl-processes" class="md-nav__link">
+    Crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-media-library-download" class="md-nav__link">
+    1) Media library download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-wget-crawl" class="md-nav__link">
+    2) wget crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-browsertrix-crawler-logged-in-public-crawls" class="md-nav__link">
+    3) Browsertrix-crawler - logged-in / public crawls
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-crawl-processes" class="md-nav__link">
+    Post-crawl processes
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-crawl processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quality-assurance-and-verification" class="md-nav__link">
+    1) Quality Assurance and Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-patch-crawls" class="md-nav__link">
+    2) Patch crawls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ingest-to-preservica" class="md-nav__link">
+    3) Ingest to Preservica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-write-basic-metadata-in-preservica" class="md-nav__link">
+    4) Write basic metadata in Preservica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-documentation" class="md-nav__link">
+    5) Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-upload-public-icaewcom-capture-to-archive-it" class="md-nav__link">
+    6) Upload public ICAEW.com capture to Archive-It
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="web-archiving-process-overview">Web Archiving Process Overview</h1>
+<blockquote>
+<p><strong>Purpose:</strong> This page outlines a full web capture of ICAEW.com crawl (logged-in / public) but the general process should apply to most other websites.</p>
+</blockquote>
+<h2 id="high-level-overview">High-level overview</h2>
+<pre class="mermaid"><code>flowchart LR
+    id1[Pre-crawl processes \n\n 1. Sitemap \n 2. Template crawl \n 3. Sub-domain discovery] --&gt; id2
+    id2[Crawl processes \n\n 1. Media library download \n 2. wget crawl - logged in \n 3. Browsertrix-crawler crawl - logged-in / public] --&gt; id3[Post-crawl processes \n\n 1. QA and verification \n 2. Patch-crawls \n 3. Ingest and metadata \n 4. Documentation]</code></pre>
+<h3 id="preservica-folder-structure">Preservica folder structure</h3>
+<blockquote>
+<p><strong>Important:</strong> The following shows an example of a complete crawl within Preservica. Web crawls should follow this structure. All items should be closed with the exception of the .wacz file.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>ICAEW.com, April 2025/
+├── 20250401-ICAEW-com-logged-in.wacz
+├── Supplementary Materials/
+│   ├── seedFile.txt [Mandatory if a seedFile.txt file was used]
+│   ├── 20250401-ICAEW-com-logged-in-wget.zip [Optional]
+│   ├── 20250401-ICAEW-com-media-library.zip [Optional]
+│   ├── QA/
+│   │   ├── wacz_matching_urls_20250401_145826.csv [Optional]
+│   │   ├── wacz_missing_urls_20250401_145826.csv [Optional]
+│   │   ├── wacz_non_200_urls_20250401_145826.csv [Optional]
+│   │   ├── wget_matching_urls_20250401_145826.csv [Optional]
+│   │   ├── wget_missing_urls_20250401_145826.csv [Optional]
+│   │   ├── wget_non_200_urls_20250401_145826.csv [Optional]
+│   │   ├── notes.txt [Optional]
+</code></pre></div>
+<hr />
+<h2 id="process-overview">Process Overview</h2>
+<h3 id="pre-crawl-processes">Pre-crawl processes</h3>
+<h4 id="1-sitemap">1) Sitemap</h4>
+<blockquote>
+<p><strong>Purpose:</strong> Save a copy of the ICAEW sitemap for:
+- Input to the web crawlers
+- Post-crawl QA / validation</p>
+</blockquote>
+<p>Use <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/sitemap%20tools/sitemap_xml_to_txt_or_html.py">sitemap_xml_to_txt_or_html.py</a> with the following arguments:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>sitemap_xml_to_txt_or_html.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--to_file<span class="w"> </span>seedFile.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://www.icaew.com/sitemap_corporate.xml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--exclude_strings<span class="w"> </span><span class="s2">&quot;sprint-test-pages&quot;</span><span class="w"> </span><span class="s2">&quot;active-members&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--deduplicate
+</code></pre></div>
+<h4 id="2-request-a-list-of-templates-and-do-a-template-crawl">2) Request a list of templates and do a template crawl</h4>
+<blockquote>
+<p><strong>Tip:</strong> Before running a full crawl, it's important to test how the crawler handles various templates and elements on the site - especially new ones. This helps identify potential issues with capture and playback.</p>
+</blockquote>
+<ul>
+<li>
+<p>Request any new additional templates be added to this document: <a href="https://icaew.sharepoint.com/:w:/s/digitalarchive/EY-WRGmke3VGmyYkTdEDDYMBfZ5nyLgefubtdJNa4WMfDQ?e=CMGN8D&amp;CID=db808ef5-54c9-52fb-079f-87384e3ca7aa&amp;ovuser=30a7efd6-7f05-437d-bc19-e7c6df3892f1%2CCraig.McCarthy%40icaew.com&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIxNDE1LzI1MDMwMjAxMDEwIiwiSGFzRmVkZXJhdGVkVXNlciI6ZmFsc2V9">Sitecore templates and examples </a></p>
+</li>
+<li>
+<p>Complete a template crawl</p>
+<ul>
+<li>This is covered on the Browsertrix-crawler page <a href="browsertrix.html">here</a>.</li>
+<li><strong>Optional:</strong> If problematic elements are identified during the template crawl, consider writing custom behaviors for the web crawler. This is outlined further <a href="browsertrix-behaviors.html">here</a>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-sub-domain-discovery">3) Sub-domain discovery</h4>
+<p><strong>Optional:</strong> Use the <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/web%20crawling/crt-scraper.py">crt-scraper.py</a> script to discover new sub-domains that may not be included in a full ICAEW.com capture. This helps ensure comprehensive coverage of all ICAEW web properties.</p>
+<hr />
+<h3 id="crawl-processes">Crawl processes</h3>
+<h4 id="1-media-library-download">1) Media library download</h4>
+<p><strong>Prerequisites:</strong>
+- Access to the VDI
+- Sitecore login credentials (available on the Logins page)</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Log into the Sitecore backend</li>
+<li>Navigate to the "Media Library"</li>
+<li>Right-click the root level folder ("Media Library")</li>
+<li>Select "Scripts" and then "Download"</li>
+</ol>
+<blockquote>
+<p><strong>Important Notes:</strong>
+- The download process may take several hours
+- The resulting zip file can be upwards of 10 GB
+- Only media stored directly in Sitecore will be downloaded. External media (e.g., Vimeo, StreamAMG) will not be included</p>
+</blockquote>
+<h4 id="2-wget-crawl">2) wget crawl</h4>
+<p>Perform a wget-based crawl to create a backup copy of the website. This provides an alternative capture method and can be useful for verification purposes.</p>
+<ul>
+<li>Detailed instructions are available on the <a href="wget.html">wget page</a>.</li>
+</ul>
+<h4 id="3-browsertrix-crawler-logged-in-public-crawls">3) Browsertrix-crawler - logged-in / public crawls</h4>
+<p>Execute the primary crawl using Browsertrix-crawler. This creates the main WACZ file that will be ingested into Preservica.</p>
+<ul>
+<li>For logged-in crawls: Requires browser profile creation with authentication cookies</li>
+<li>For public crawls: No authentication required</li>
+<li>Detailed instructions are available on the <a href="browsertrix.html">Browsertrix-crawler page</a>.</li>
+</ul>
+<hr />
+<h3 id="post-crawl-processes">Post-crawl processes</h3>
+<h4 id="1-quality-assurance-and-verification">1) Quality Assurance and Verification</h4>
+<p>Perform comprehensive QA checks to validate the crawl completeness and quality:</p>
+<ul>
+<li>Run validation scripts to compare crawled URLs against the sitemap</li>
+<li>Generate QA reports (matching URLs, missing URLs, non-200 status codes)</li>
+<li>Review and investigate any missing or problematic URLs</li>
+<li>Verify WACZ file integrity and playback functionality</li>
+</ul>
+<p>Detailed QA processes are covered on the <a href="wget.html">wget page</a> and the <a href="browsertrix.html">Browsertrix-crawler page</a>.</p>
+<h4 id="2-patch-crawls">2) Patch crawls</h4>
+<blockquote>
+<p><strong>Conditional:</strong> If QA reveals missing URLs or problematic pages, perform targeted patch crawls to capture the missing content:</p>
+</blockquote>
+<ul>
+<li>Create a new seed file containing only the problematic URLs</li>
+<li>Run a patch crawl using a one-hop configuration (only crawls URLs in seed file plus one hop for linked resources)</li>
+<li>This prevents re-crawling the entire site while capturing missing content</li>
+<li>Detailed instructions are available in the <a href="browsertrix.html#icaewcom-patch-crawl">Browsertrix-crawler patch crawl section</a></li>
+</ul>
+<h4 id="3-ingest-to-preservica">3) Ingest to Preservica</h4>
+<p>Upload all crawl materials to Preservica following the established folder structure:</p>
+<ul>
+<li>Upload to Preservica using the <a href="../preservica/aws-cli.html">AWS client</a></li>
+<li>Replicate the <a href="#preservica-folder-structure">Preservica folder structure</a> as outlined above</li>
+<li>Ensure all items are closed with the exception of the .wacz file</li>
+</ul>
+<blockquote>
+<p><strong>Post-ingest verification:</strong>
+- Verify fixity values match using:
+  <div class="highlight"><pre><span></span><code>sha1sum<span class="w"> </span><span class="o">[</span>FILE<span class="o">]</span>
+</code></pre></div>
+- Test playback of the WACZ file in Preservica's Portal to ensure proper rendering</p>
+</blockquote>
+<h4 id="4-write-basic-metadata-in-preservica">4) Write basic metadata in Preservica</h4>
+<p>Add essential metadata to the crawl asset in Preservica to ensure proper discovery and access:</p>
+<ul>
+<li>Follow this example: <a href="https://icaew.access.preservica.com/portal/asset/sdb%3AIO%7Cd5c70515-474b-4858-b8e9-fcc9f8e6c64c">ICAEW.com, April 2025</a></li>
+<li>Include capture date, crawl type (logged-in/public), and any relevant notes</li>
+</ul>
+<h4 id="5-documentation">5) Documentation</h4>
+<p>Update relevant documentation to track the crawl completion:</p>
+<ul>
+<li>Update the <a href="https://icaew.sharepoint.com/:x:/r/sites/digitalarchive/_layouts/15/Doc.aspx?sourcedoc=%7B17C4654A-615F-4E26-8FF9-B309DEB01339%7D&amp;file=ICAEW%20platform%20register.xlsx&amp;action=default&amp;mobileredirect=true">ICAEW platform register</a> document with the latest capture dates</li>
+<li>Document any issues encountered or special considerations in the crawl notes</li>
+</ul>
+<h4 id="6-upload-public-icaewcom-capture-to-archive-it">6) Upload public ICAEW.com capture to Archive-It</h4>
+<p><strong>TODO:</strong> Upload the public ICAEW.com capture to Archive-It for public access.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1279 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/admin-guides/preservica/dublin-core.html">
+      
+      
+        <link rel="prev" href="post-ingest.html">
+      
+      
+        <link rel="next" href="aws-cli.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Dublin Core - ICAEW Digital Archive Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metadata-style-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-header__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICAEW Digital Archive Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dublin Core
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-tabs__link">
+        User guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="standard-ingest-workflow.html" class="md-tabs__link md-tabs__link--active">
+        Admin guides
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../useful-resources.html" class="md-tabs__link">
+      Useful resources
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-nav__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ICAEW Digital Archive Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          User guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-nav__link">
+        Why digital preservation and web-archiving?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/overview.html" class="md-nav__link">
+        Overview of the ICAEW Digital Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/preservica-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/accessing-preservica.html" class="md-nav__link">
+        Accessing and searching Preservica
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Web archives (via Preservica and Archive-It)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives (via Preservica and Archive-It)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/web-archive-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/accessing-the-web-archives.html" class="md-nav__link">
+        Accessing and searching the web archives
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Admin guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Admin guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="standard-ingest-workflow.html" class="md-nav__link">
+        Standard ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appraisal.html" class="md-nav__link">
+        Appraisal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ingest-workflow.html" class="md-nav__link">
+        Ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-ingest.html" class="md-nav__link">
+        Post Ingest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dublin Core
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dublin-core.html" class="md-nav__link md-nav__link--active">
+        Dublin Core
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-xip" class="md-nav__link">
+    Asset XIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-xip" class="md-nav__link">
+    Folder XIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-icaew-schema" class="md-nav__link">
+    Custom ICAEW Schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-dublin-core" class="md-nav__link">
+    Asset Dublin Core
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-dublin-core" class="md-nav__link">
+    Folder Dublin Core
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aws-cli.html" class="md-nav__link">
+        Uploading large files via AWS CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="filename-conventions.html" class="md-nav__link">
+        Filename conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backing-up.html" class="md-nav__link">
+        Backing up Preservica locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downloading-streamamg-videos.html" class="md-nav__link">
+        Downloading StreamAMG videos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downloading-youtube-videos-api.html" class="md-nav__link">
+        Downloading YouTube videos (YouTube Data API)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="yt-dlp-youtube-dl.html" class="md-nav__link">
+        yt-dlp and youtube-dl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="archived-pages.html" class="md-nav__link">
+        Archived pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Web archives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/crawl-process-overview.html" class="md-nav__link">
+        Web crawl process overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/wget.html" class="md-nav__link">
+        Wget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/browsertrix.html" class="md-nav__link">
+        Browsertrix-crawler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/browsertrix-behaviors.html" class="md-nav__link">
+        Browsertrix custom behaviors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/monthly-web-captures.html" class="md-nav__link">
+        Monthly web captures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-archiving/appendix.html" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-archive-workstation.html" class="md-nav__link">
+        Digital archiving workstation setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editing-digital-archive-handbook.html" class="md-nav__link">
+        Editing the ICAEW Digital Archive Handbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting.html" class="md-nav__link">
+        Reporting / Statistics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-resources.html" class="md-nav__link">
+        Useful resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-xip" class="md-nav__link">
+    Asset XIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-xip" class="md-nav__link">
+    Folder XIP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-icaew-schema" class="md-nav__link">
+    Custom ICAEW Schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-dublin-core" class="md-nav__link">
+    Asset Dublin Core
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-dublin-core" class="md-nav__link">
+    Folder Dublin Core
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="metadata-style-guide">Metadata Style Guide</h1>
+<h2 id="general">General</h2>
+<blockquote>
+<p><strong>Purpose:</strong> This page covers how ICAEW applies metadata in Preservica.</p>
+</blockquote>
+<h2 id="asset-xip">Asset XIP</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>XIP Terms</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>entity.title</strong></td>
+<td><strong>General Use</strong> <ul><li>The name given to the resource.</li></ul><strong>ICAEW Specific Use</strong><ul><li>The title as found within the document.</li><li>Use sentence case (capitalize first word only).</li><li>Acronyms (e.g., OECD, IFRS, FRC, HMRC, UK, VAT) and proper nouns must always be all capitalised, even at the start or after a colon.</li><li>Separate title and subtitle with a colon (replace em-dashes, en-dashes, or hyphens with a colon).</li><li>Do not capitalize the first letter after a colon.</li><li>Do not use "&amp;"; use "and".</li><li>Use question marks where applicable, but do not end titles with full stops.</li><li>Order and format - title: subtitle, issue/volume, date.</li><li>Dates must be in a readable format like this: "15th January 2024".</li><li>Include if the document is revised or time-limited.</li><li>Use only standard ASCII characters (no smart quotes or special symbols).</li></ul></td>
+<td><ul><li><i>Economia, Issue 1</i></li><li><i>International consistency: global challenges initiative, providing direction</i></li><li><i>Preface to international reporting standards, TECH 02/02</i></li><li><i>OECD discussion draft on the application of tax treaties to state-owned entities: including sovereign wealth funds, TAXREP 4/10, 22nd January 2010</i></li><li><i>Audit firm governance: a project for the Financial Reporting Council, Ernst and Young LLP response, 3rd February 2009</i></li><li><i>Technical release: IFRS 9 implementation, TECH 01/24, 15th January 2024</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>entity.description</strong></td>
+<td><strong>General Use</strong> <ul><li>An account of the content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Use only if an existing summary or description is present.</li><li>Briefly summarize the content if available (do not create new summaries manually).</li><li>Listing of contents may be used, with each item separated by a semicolon.</li><li>Always end the description with a full stop; question marks are also allowed.</li></ul></td>
+<td><ul><li><i>Technical guidance on implementing IFRS 9 for financial instruments.</i></li><li><i>This Audit and Assurance Faculty guidance sets out the steps auditors need to take to ascertain whether material uncertainty disclosures in relation to going concern in the financial statements are adequate, and how these disclosures will then impact the audit report. It supplements the guidance in the faculty's audit report guides.</i></li><li><i>This guide provides an overview of blockchain technology, including its key features; potential use cases; challenges to widespread adoption; a glossary of terms; and relevant resources. Includes a case study on Ripple and discusses both the strengths and limitations of blockchain for accountants.</i></li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="folder-xip">Folder XIP</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>XIP Terms</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>entity.title</strong></td>
+<td><ul><li>Acronyms and proper nouns should be all capitalised appropriately.</li><li>Use sentence case.</li><li>Uses user-friendly names (i.e. prioritise access for folder level entity.title.).</li><li>Folders can be dated if they contain assets collected by date.</li></ul></td>
+<td><ul><li><i>Economia magazine</i></li><li><i>Economia, 2019</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>entity.description</strong></td>
+<td><strong>General Use</strong> <ul><li>An account of the content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>This field for folders is used to provide a general description of the collection within the folder.</li><li>Include a date range and relevant title history.</li><li>Do not use special punctuation.</li></ul></td>
+<td><ul><li><i>Economia is the journal of ICAEW (previously ICAEW updates were published in Accountancy). Economia ran from 2012 to 2019. Quarterly replaced Economia.</i></li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-icaew-schema">Custom ICAEW Schema</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Custom ICAEW Schema Terms</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>icaew:ContentType</strong></td>
+<td><ul><li>We use a controlled vocabulary defined by the ICAEW's taxonomy.</li></ul></td>
+<td>Must use one of the following controlled vocabulary terms (exact spelling and case):</br> <ul><li>Annual report</li><li>Article</li><li>Committee papers</li><li>Database</li><li>eBook</li><li>eBook chapter</li><li>eLearning module</li><li>Event</li><li>Form</li><li>Helpsheets and support</li><li>Hub page</li><li>ICAEW consultation and response</li><li>Interview</li><li>Journal</li><li>Learning material</li><li>Legal precedent</li><li>Library book</li><li>Listing</li><li>Newsletter</li><li>No content type</li><li>Podcast</li><li>Press release</li><li>Promotional material</li><li>Regional news</li><li>Regulations</li><li>Report</li><li>Representation</li><li>Research guide</li><li>Speech or presentation</li><li>Synopsis</li><li>Technical release</li><li>Thought leadership report</li><li>Webinar</li><li>Website</li></ul> </br> If the content type cannot be determined from the document, use "No content type".</td>
+</tr>
+<tr>
+<td align="left"><strong>icaew:InternalReference</strong></td>
+<td><ul><li>Format: <strong>YYYYMMDD-Document-Name</strong></li><li>Use title case.</li><li>Allowed characters: letters (A-Z, a-z), numbers (0-9), hyphens (-). <li>Replace spaces with hyphens. No special characters. <strong>&amp;</strong> should be replaced with "and" if required.</li><li>Acronyms should be all capitals.</li><li>The YYYYMMDD is to be taken from within the document itself and not the document properties.</li><li>Use 00 to indicate absence of days/months/years. This field can begin with 00000000.</li><li>Include the document title and the faculty contributor, where applicable.</li><li>Include unique identifier. This will normally be an issue or reference number.</li></ul></td>
+<td><ul><li><i>20120200-Economia-Issue-1</i></li><li><i>20101000-International-Consistency</i></li><li><i>20020117-TECH-02-02</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>icaew:Notes</strong></td>
+<td><ul><li>At folder level this is used for internal note-taking purposes.</li><li>For folders used exclusively for deletion, this field explains reason for use and why it is to be deleted.</li><li>For collections, use this field to include information on who requested the ingest and who did the ingest.</li><li>This field is to be used to describe the providence of the work.</li></ul></td>
+<td><ul><li><strong>EXAMPLE HERE?</strong></li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="asset-dublin-core">Asset Dublin Core</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>DC Terms</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Title</strong></td>
+<td>Use same guidance as in entity.title</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>Creator</strong></td>
+<td><strong>General Use</strong> <ul><li>An entity primarily responsible for making the content.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>The creator is the author as credited in the document itself, not in its properties.</li><li>Multiple creators are allowed.</li><li>Preference for Creator is author FirstName LastName, internal faculty, and then institution (most often ICAEW).</li></ul></td>
+<td><ul><li><i>John Doe</i></li><li><i>Financial Services Faculty</i></li><li><i>Deloitte</i></li><li><i>ICAEW</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Subject</strong></td>
+<td><strong>General Use</strong> <ul><li>The topic of the content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Multiple dc:subject fields are allowed.</li><li>Subjects are selected from ICAEW’s internal classification system (Semaphore).</li><li>Each document should be assigned 10 relevant subjects.</li></ul></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>Description</strong></td>
+<td>Use same guidance as in entity.title</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>Publisher</strong></td>
+<td><strong>General Use</strong> <ul><li>The entity responsible for making the resource available.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Preference for external publishers, otherwise use ICAEW.</li><li>Check ICAEW Library catalogue for support.</li></ul></td>
+<td><ul><li><i>Progressive Content</i></li><li><i>ICAEW</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Contributor</strong></td>
+<td><strong>General Use</strong> <ul><li>An entity responsible for making contributions to the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>This field is for external institutes.</li><li>Use the external institute’s full title.</li></ul></td>
+<td><ul><li><i>Deloitte</i></li><li><i>The Pensions Regulator</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Date</strong></td>
+<td><strong>General Use</strong> <ul><li>A date associated with an event in the life cycle of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Use the format: YYYY-MM-DD.</li><li>If the full date is unknown, use month and year (YYYY-MM) or just year (YYYY).</li></ul></td>
+<td><ul><li><i>2002-01-17</i></li><li><i>2012-02</i></li><li><i>2022</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Type</strong></td>
+<td><strong>General Use</strong> <ul><li>The nature or genre of the content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Contains DC recommended <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-7">DCMI Type Vocabulary</a> such as Text or Moving Image etc.</li><li>Use title case.</li></ul></td>
+<td><ul><li><i>Text</i></li><li><i>Moving Image</i></li><li><i>Audio</i></li><li><i>Interactive Resource</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Format</strong></td>
+<td><strong>General Use</strong> <ul><li>The physical or digital manifestation of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Use the file's extension to indicate its format.</li><li>Use lowercase without preceding ".".</li></ul></td>
+<td><ul><li><i>doc</i></li><li><i>xlsx</i></li><li><i>csv</i></li><li><i>pdf</i></li><li><i>mp4</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Identifier</strong></td>
+<td><strong>General Use</strong> <ul><li>An unambiguous reference to the resource within a given context.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Examples of used Identifiers: ISBN, URLs, issue numbers, unique identifiers.</li><li>Multiple identifiers are allowed.</li></ul></td>
+<td><ul><li><i>https://www.icaew.com/technical/tax/tax-faculty/taxline</i></li><li><i>ISBN 978-1-78915-123-4</i></li><li><i>TECH 12/10 AAF</i></li><li><i>0_hbyzwx9t</td>
+</tr>
+<tr>
+<td align="left"></i></li></ul></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>Source</strong></td>
+<td><strong>General Use</strong> <ul><li>A related resource from which the described resource is derived.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Primarily used if an item has been digitised and has an original source since it is not a born-digital item.</li></ul></td>
+<td><ul><li><i>Digitised</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Language</strong></td>
+<td><strong>General Use</strong> <ul><li>A language of the intellectual content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Will normally be 'en' for English ICAEW publications.</li></ul></td>
+<td><ul><li><i>en</i></li><li><i>ar</i></li><li><i>cn</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Relation</strong></td>
+<td><strong>General Use</strong> <ul><li>A reference to a related resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Populate with the name of the parent folder where the document resides.</li><li>Helps track document relationships within the archive hierarchy.</li><li>Documents linked into a separate parent folder/collection would have two Relation fields.</li></ul></td>
+<td><ul><li><i>Economia</i></li><li><i>Audit Monitoring Report</i></li><li><i>Faculty Serials</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Coverage</strong></td>
+<td><strong>General Use</strong> <ul><li>The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>ICAEW does not currently use this field, maybe in future.</li></ul></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><strong>Rights</strong></td>
+<td><strong>General Use</strong> <ul><li>Information about rights held in and over the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>ICAEW does not currently use this field, maybe in future. Rights information can be found within documents.</li></ul></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="folder-dublin-core">Folder Dublin Core</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>DC Terms</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Title</strong></td>
+<td><strong>General Use</strong> <ul><li>The name given to the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Use title case.</li><li>No special punctuation.</li><li>Use access-friendly titles and use commas to break between title and dates.</li></ul></td>
+<td><ul><li><i>Economia, 2019</i></li><li><i>Audit Monitoring Report</i></li><li><i>Faculty Serials</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Description</strong></td>
+<td><strong>General Use</strong> <ul><li>An account of the content of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>This field for folders is used to provide a general description of the collection within the folder.</li><li>Include a date range and relevant title history.</li><li>Do not use special punctuation.</li></ul></td>
+<td><ul><li><i>Economia is the journal of ICAEW (previously ICAEW updates were published in Accountancy). Economia ran from 2012 to 2019. Quarterly replaced Economia.</i></li></ul></td>
+</tr>
+<tr>
+<td align="left"><strong>Date</strong></td>
+<td><strong>General Use</strong> <ul><li>A date associated with an event in the life cycle of the resource.</li></ul> <strong>ICAEW Specific Use</strong><ul><li>Date ranges should be included in the parent folder, using YYYY-MM-DD.</li><li>If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used.</li><li>Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.</li><li>Either the start or end date may be missing.</li></ul></td>
+<td><strong>TO BE DECIDED!(?)</strong> <ul><li><i>2012 - 2019</i></li><li><i>2012 / 2019</i></li></ul></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

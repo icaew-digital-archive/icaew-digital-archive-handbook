@@ -1,0 +1,1920 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://example.com/admin-guides/web-archiving/browsertrix.html">
+      
+      
+        <link rel="prev" href="wget.html">
+      
+      
+        <link rel="next" href="browsertrix-behaviors.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Browsertrix-crawler - ICAEW Digital Archive Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#browsertrix-crawler" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-header__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICAEW Digital Archive Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Browsertrix-crawler
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-tabs__link">
+        User guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../preservica/standard-ingest-workflow.html" class="md-tabs__link md-tabs__link--active">
+        Admin guides
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../useful-resources.html" class="md-tabs__link">
+      Useful resources
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="ICAEW Digital Archive Handbook" class="md-nav__button md-logo" aria-label="ICAEW Digital Archive Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ICAEW Digital Archive Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          User guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/why-dp-web-archives.html" class="md-nav__link">
+        Why digital preservation and web-archiving?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/overview.html" class="md-nav__link">
+        Overview of the ICAEW Digital Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/preservica-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/preservica/accessing-preservica.html" class="md-nav__link">
+        Accessing and searching Preservica
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Web archives (via Preservica and Archive-It)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives (via Preservica and Archive-It)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/web-archive-overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/web-archiving/accessing-the-web-archives.html" class="md-nav__link">
+        Accessing and searching the web archives
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Admin guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Admin guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Preservica
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Preservica
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/standard-ingest-workflow.html" class="md-nav__link">
+        Standard ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/appraisal.html" class="md-nav__link">
+        Appraisal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/ingest-workflow.html" class="md-nav__link">
+        Ingest workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/post-ingest.html" class="md-nav__link">
+        Post Ingest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/dublin-core.html" class="md-nav__link">
+        Dublin Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/aws-cli.html" class="md-nav__link">
+        Uploading large files via AWS CLI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/filename-conventions.html" class="md-nav__link">
+        Filename conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/backing-up.html" class="md-nav__link">
+        Backing up Preservica locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/downloading-streamamg-videos.html" class="md-nav__link">
+        Downloading StreamAMG videos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/downloading-youtube-videos-api.html" class="md-nav__link">
+        Downloading YouTube videos (YouTube Data API)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/yt-dlp-youtube-dl.html" class="md-nav__link">
+        yt-dlp and youtube-dl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preservica/archived-pages.html" class="md-nav__link">
+        Archived pages
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Web archives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web archives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="crawl-process-overview.html" class="md-nav__link">
+        Web crawl process overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wget.html" class="md-nav__link">
+        Wget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Browsertrix-crawler
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="browsertrix.html" class="md-nav__link md-nav__link--active">
+        Browsertrix-crawler
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crawl-types" class="md-nav__link">
+    Crawl Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-crawl" class="md-nav__link">
+    Template crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="Template crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creating-a-browser-profile" class="md-nav__link">
+    1. Creating a Browser Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setting-up-and-starting-the-template-crawl" class="md-nav__link">
+    2. Setting Up and Starting the Template Crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Setting Up and Starting the Template Crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-crawl" class="md-nav__link">
+    Starting the Crawl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quality-assurance-and-verification" class="md-nav__link">
+    3. Quality Assurance and Verification
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Quality Assurance and Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-web_archive_validatorpy" class="md-nav__link">
+    1. Run web_archive_validator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qa-crawl" class="md-nav__link">
+    2. QA Crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-manual-inspection" class="md-nav__link">
+    3. Manual Inspection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-icaewcom-crawl-logged-in" class="md-nav__link">
+    Full ICAEW.com crawl (logged-in)
+  </a>
+  
+    <nav class="md-nav" aria-label="Full ICAEW.com crawl (logged-in)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creating-a-browser-profile_1" class="md-nav__link">
+    1. Creating a Browser Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setting-up-and-starting-the-full-icaewcom-crawl" class="md-nav__link">
+    2. Setting Up and Starting the Full ICAEW.com Crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Setting Up and Starting the Full ICAEW.com Crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_2" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-crawl_1" class="md-nav__link">
+    Starting the Crawl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quality-assurance-and-verification_1" class="md-nav__link">
+    3. Quality Assurance and Verification
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Quality Assurance and Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-web_archive_validatorpy_1" class="md-nav__link">
+    1. Run web_archive_validator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-final-packaging-of-warcs-into-wacz" class="md-nav__link">
+    2. Final packaging of WARCs into WACZ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-manual-inspection_1" class="md-nav__link">
+    3. Manual Inspection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-icaewcom-crawl-public" class="md-nav__link">
+    Full ICAEW.com crawl (public)
+  </a>
+  
+    <nav class="md-nav" aria-label="Full ICAEW.com crawl (public)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-browser-profile" class="md-nav__link">
+    Creating a Browser Profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icaewcom-patch-crawl" class="md-nav__link">
+    ICAEW.com patch crawl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-domain-crawl" class="md-nav__link">
+    Simple domain crawl
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="browsertrix-behaviors.html" class="md-nav__link">
+        Browsertrix custom behaviors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="monthly-web-captures.html" class="md-nav__link">
+        Monthly web captures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendix.html" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-archive-workstation.html" class="md-nav__link">
+        Digital archiving workstation setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editing-digital-archive-handbook.html" class="md-nav__link">
+        Editing the ICAEW Digital Archive Handbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting.html" class="md-nav__link">
+        Reporting / Statistics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-resources.html" class="md-nav__link">
+        Useful resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crawl-types" class="md-nav__link">
+    Crawl Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-crawl" class="md-nav__link">
+    Template crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="Template crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creating-a-browser-profile" class="md-nav__link">
+    1. Creating a Browser Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setting-up-and-starting-the-template-crawl" class="md-nav__link">
+    2. Setting Up and Starting the Template Crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Setting Up and Starting the Template Crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-crawl" class="md-nav__link">
+    Starting the Crawl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quality-assurance-and-verification" class="md-nav__link">
+    3. Quality Assurance and Verification
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Quality Assurance and Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-web_archive_validatorpy" class="md-nav__link">
+    1. Run web_archive_validator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-qa-crawl" class="md-nav__link">
+    2. QA Crawl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-manual-inspection" class="md-nav__link">
+    3. Manual Inspection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-icaewcom-crawl-logged-in" class="md-nav__link">
+    Full ICAEW.com crawl (logged-in)
+  </a>
+  
+    <nav class="md-nav" aria-label="Full ICAEW.com crawl (logged-in)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creating-a-browser-profile_1" class="md-nav__link">
+    1. Creating a Browser Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setting-up-and-starting-the-full-icaewcom-crawl" class="md-nav__link">
+    2. Setting Up and Starting the Full ICAEW.com Crawl
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Setting Up and Starting the Full ICAEW.com Crawl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_2" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-crawl_1" class="md-nav__link">
+    Starting the Crawl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quality-assurance-and-verification_1" class="md-nav__link">
+    3. Quality Assurance and Verification
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Quality Assurance and Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-web_archive_validatorpy_1" class="md-nav__link">
+    1. Run web_archive_validator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-final-packaging-of-warcs-into-wacz" class="md-nav__link">
+    2. Final packaging of WARCs into WACZ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-manual-inspection_1" class="md-nav__link">
+    3. Manual Inspection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-icaewcom-crawl-public" class="md-nav__link">
+    Full ICAEW.com crawl (public)
+  </a>
+  
+    <nav class="md-nav" aria-label="Full ICAEW.com crawl (public)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-browser-profile" class="md-nav__link">
+    Creating a Browser Profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icaewcom-patch-crawl" class="md-nav__link">
+    ICAEW.com patch crawl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-domain-crawl" class="md-nav__link">
+    Simple domain crawl
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="browsertrix-crawler">Browsertrix-crawler</h1>
+<h2 id="overview">Overview</h2>
+<p>This document covers the process of crawling ICAEW.com using Browsertrix-crawler. While focused on ICAEW.com, the process should be applicable to other websites. The configuration files, Python scripts, and custom JavaScript files can be found in the <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/tree/main/browsertrix-crawler%20files%20and%20scripts">digital-archiving-scripts repository</a>.</p>
+<p>For comprehensive documentation on Browsertrix-crawler, including all configuration options and advanced features, refer to the <a href="https://crawler.docs.browsertrix.com/">official Browsertrix Crawler documentation</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before starting any crawl, ensure you have:</p>
+<ol>
+<li>Docker installed and running on your system</li>
+<li>The specific Browsertrix-crawler image version pulled:
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>webrecorder/browsertrix-crawler:1.5.11
+</code></pre></div><blockquote>
+<p><strong>Note:</strong> Using version 1.5.11 prevents compatibility issues that can occur with the latest versions. This ensures consistent behavior and avoids unexpected problems during crawls.</p>
+</blockquote>
+</li>
+<li>Required configuration files and scripts from the digital-archiving-scripts repository</li>
+<li>Sufficient disk space for the crawl</li>
+</ol>
+<h2 id="crawl-types">Crawl Types</h2>
+<p>This guide covers several types of crawls. Choose the appropriate type based on your requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Crawl Type</th>
+<th>Use Case</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#template-crawl">Template crawl</a></td>
+<td>Testing specific page templates</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><a href="#full-icaewcom-crawl-logged-in">ICAEW.com (logged-in)</a></td>
+<td>Full site crawl with authentication</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><a href="#full-icaewcom-crawl-public">ICAEW.com (public)</a></td>
+<td>Full site crawl without authentication</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><a href="#icaewcom-patch-crawl">ICAEW.com patch crawl</a></td>
+<td>Targeted crawl for missing URLs</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><a href="#simple-domain-crawl">Simple domain crawl</a></td>
+<td>Straightforward domain-scope crawl</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="template-crawl">Template crawl</h2>
+<h3 id="1-creating-a-browser-profile">1. Creating a Browser Profile</h3>
+<blockquote>
+<p><strong>Purpose:</strong> This step creates a browser profile with your authentication cookies for the logged-in crawl. For detailed information, see the <a href="https://crawler.docs.browsertrix.com/user-guide/creating-and-using-browser-profiles/">official documentation on Creating and Using Browser Profiles</a>.</p>
+</blockquote>
+<p><strong>Command:</strong>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">6080</span>:6080<span class="w"> </span>-p<span class="w"> </span><span class="m">9223</span>:9223<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls/profiles:/crawls/profiles/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-it<span class="w"> </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>create-login-profile<span class="w"> </span>--url<span class="w"> </span><span class="s2">&quot;https://my.icaew.com/security/Account/Login&quot;</span>
+</code></pre></div></p>
+<p><strong>Profile Creation Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Open Chrome</strong> and navigate to <a href="http://localhost:9223/">http://localhost:9223/</a></p>
+</li>
+<li>
+<p><strong>Configure browser settings:</strong></p>
+</li>
+<li>Click "Allow all cookies"</li>
+<li>
+<p>Disable Brave shields</p>
+</li>
+<li>
+<p><strong>Authentication:</strong></p>
+</li>
+<li>Login with your credentials</li>
+<li>
+<p>Disable Brave shields again (if prompted)</p>
+</li>
+<li>
+<p><strong>Clean up:</strong></p>
+</li>
+<li>
+<p>Close the "Discover the latest MyICAEW App" banner</p>
+</li>
+<li>
+<p><strong>Verification:</strong></p>
+</li>
+<li>Navigate to a page with StreamAMG video player (e.g., https://www.icaew.com/for-current-aca-students/training-agreement/your-online-training-file-guide/online-training-file-videos)</li>
+<li>
+<p>Verify that the video element loads correctly</p>
+</li>
+<li>
+<p><strong>Finalize:</strong></p>
+</li>
+<li>Click "Create Profile"</li>
+</ol>
+<h3 id="2-setting-up-and-starting-the-template-crawl">2. Setting Up and Starting the Template Crawl</h3>
+<h4 id="prerequisites_1">Prerequisites</h4>
+<p>Ensure you have the following files in your working directory:</p>
+<ul>
+<li><code>crawl-config.yaml</code> - Configuration file for the crawl</li>
+<li><code>seedFile.txt</code> - Contains URLs to crawl. This should be the URLs found in the template document.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The custom behavior script (<code>icaew-com-behaviors.js</code>) is loaded via URL from the <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js">digital-archiving-scripts repository</a>, so no local copy is required. For information on creating custom behaviors, see the <a href="https://crawler.docs.browsertrix.com/user-guide/browser-behaviors/">Browser Behaviors documentation</a>.</p>
+</blockquote>
+<p><strong>Required directory structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="nv">$PWD</span>/
+├──<span class="w"> </span>seedFile.txt
+├──<span class="w"> </span>crawl-config.yaml
+</code></pre></div></p>
+<h4 id="configuration">Configuration</h4>
+<blockquote>
+<p><strong>Tip:</strong> For comprehensive configuration options, see the <a href="https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/">YAML Crawl Config documentation</a>.</p>
+</blockquote>
+<p>Example <code>crawl-config.yaml</code> for template testing:
+<div class="highlight"><pre><span></span><code><span class="c1"># For additional configuration options, see https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/</span>
+<span class="c1"># A &quot;template test&quot; crawl; i.e. used for crawling all the types of templates found on ICAEW.com.</span>
+<span class="c1"># The crawl will only crawl pages defined in seedFile.txt and no others.</span>
+
+<span class="c1"># Basic setup</span>
+<span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/crawls/profiles/profile.tar.gz</span>
+<span class="nt">seedFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/app/seedFile.txt</span>
+<span class="nt">collection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template-test</span>
+<span class="nt">screencastPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9037</span>
+<span class="nt">customBehaviors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/icaew-digital-archive/digital-archiving-scripts/refs/heads/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js</span>
+
+<span class="c1"># Additional options</span>
+<span class="nt">allowHashUrls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">combineWARC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">generateWACZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">text</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-warc</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-pages</span>
+<span class="nt">screenshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">view</span>
+<span class="nt">diskUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="c1"># Crawl specific options</span>
+<span class="nt">scopeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;page-spa&quot;</span>
+</code></pre></div></p>
+<h4 id="starting-the-crawl">Starting the Crawl</h4>
+<p>Command:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9037</span>:9037<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls:/crawls<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawl-config.yaml:/app/crawl-config.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/seedFile.txt:/app/seedFile.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span>crawl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config<span class="w"> </span>/app/crawl-config.yaml
+</code></pre></div></p>
+<blockquote>
+<p><strong>Monitor the crawl progress at:</strong> <a href="http://localhost:9037/">http://localhost:9037</a></p>
+</blockquote>
+<h3 id="3-quality-assurance-and-verification">3. Quality Assurance and Verification</h3>
+<p>After the crawl completes, perform the following verification steps:</p>
+<h4 id="1-run-web_archive_validatorpy">1. Run web_archive_validator.py</h4>
+<ul>
+<li>Use <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/web%20crawling/web_archive_validator.py">web_archive_validator.py</a> to generate three CSV files:<ul>
+<li><code>matching_urls.csv</code> - Successfully crawled URLs</li>
+<li><code>missing_urls.csv</code> - URLs that failed to crawl</li>
+<li><code>non_200_urls.csv</code> - URLs that returned non-200 status codes</li>
+</ul>
+</li>
+<li>Investigate missing and non-200 URLs. If neccessary, create a new seedFile.txt with problematic URLs. Run a secondary crawl using the same configuration. It may be worth updating the <a href="https://icaew.sharepoint.com/:w:/s/digitalarchive/EY-WRGmke3VGmyYkTdEDDYMBfZ5nyLgefubtdJNa4WMfDQ?e=CMGN8D&amp;CID=db808ef5-54c9-52fb-079f-87384e3ca7aa&amp;ovuser=30a7efd6-7f05-437d-bc19-e7c6df3892f1%2CCraig.McCarthy%40icaew.com&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIxNDE1LzI1MDMwMjAxMDEwIiwiSGFzRmVkZXJhdGVkVXNlciI6ZmFsc2V9">Sitecore templates and examples</a> document at this point (i.e. updating the URLs to the redirects and removing non-existent pages).</li>
+</ul>
+<h4 id="2-qa-crawl">2. QA Crawl</h4>
+<blockquote>
+<p><strong>Tip:</strong> For more information on Quality Assurance crawling, see the <a href="https://crawler.docs.browsertrix.com/user-guide/quality-assurance/">official QA documentation</a>.</p>
+</blockquote>
+<p>Run a QA crawl to verify the capture:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9037</span>:9037<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls/:/crawls/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-it<span class="w"> </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span>qa<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--qaSource<span class="w"> </span>/crawls/collections/template-test/template-test.wacz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--collection<span class="w"> </span>template-qa<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--generateWACZ<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--profile<span class="w"> </span>/crawls/profiles/profile.tar.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--customBehaviors<span class="w"> </span>https://raw.githubusercontent.com/icaew-digital-archive/digital-archiving-scripts/refs/heads/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--screencastPort<span class="w"> </span><span class="m">9037</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--workers<span class="w"> </span><span class="m">6</span>
+</code></pre></div></p>
+<p>Generate a QA report using <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/web%20crawling/extract_qa.py">extract_qa.py</a>. Use this to futher inspect problematic URLs.</p>
+<h4 id="3-manual-inspection">3. Manual Inspection</h4>
+<ul>
+<li>Use <a href="https://github.com/webrecorder/replayweb.page">replayweb.page</a> to inspect the WACZ file</li>
+<li>Verify page rendering and functionality</li>
+<li>Go to the last captured page and ensure that it has remained "logged-in"</li>
+</ul>
+<hr />
+<h2 id="full-icaewcom-crawl-logged-in">Full ICAEW.com crawl (logged-in)</h2>
+<h3 id="1-creating-a-browser-profile_1">1. Creating a Browser Profile</h3>
+<blockquote>
+<p><strong>Purpose:</strong> This step creates a browser profile with your authentication cookies for the logged-in crawl. For detailed information, see the <a href="https://crawler.docs.browsertrix.com/user-guide/creating-and-using-browser-profiles/">official documentation on Creating and Using Browser Profiles</a>.</p>
+</blockquote>
+<p><strong>Command:</strong>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">6080</span>:6080<span class="w"> </span>-p<span class="w"> </span><span class="m">9223</span>:9223<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls/profiles:/crawls/profiles/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-it<span class="w"> </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>create-login-profile<span class="w"> </span>--url<span class="w"> </span><span class="s2">&quot;https://my.icaew.com/security/Account/Login&quot;</span>
+</code></pre></div></p>
+<p><strong>Profile Creation Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Open Chrome</strong> and navigate to <a href="http://localhost:9223/">http://localhost:9223/</a></p>
+</li>
+<li>
+<p><strong>Configure browser settings:</strong></p>
+</li>
+<li>Click "Allow all cookies"</li>
+<li>
+<p>Disable Brave shields</p>
+</li>
+<li>
+<p><strong>Authentication:</strong></p>
+</li>
+<li>Login with your credentials</li>
+<li>
+<p>Disable Brave shields again (if prompted)</p>
+</li>
+<li>
+<p><strong>Clean up:</strong></p>
+</li>
+<li>
+<p>Close the "Discover the latest MyICAEW App" banner</p>
+</li>
+<li>
+<p><strong>Verification:</strong></p>
+</li>
+<li>Navigate to a page with StreamAMG video player (e.g., https://www.icaew.com/for-current-aca-students/training-agreement/your-online-training-file-guide/online-training-file-videos)</li>
+<li>
+<p>Verify that the video element loads correctly</p>
+</li>
+<li>
+<p><strong>Finalize:</strong></p>
+</li>
+<li>Click "Create Profile"</li>
+</ol>
+<h3 id="2-setting-up-and-starting-the-full-icaewcom-crawl">2. Setting Up and Starting the Full ICAEW.com Crawl</h3>
+<h4 id="prerequisites_2">Prerequisites</h4>
+<p><strong>Required Files:</strong> Ensure you have the following files in your working directory:</p>
+<ul>
+<li><code>crawl-config.yaml</code> - Configuration file for the crawl</li>
+<li><code>seedFile.txt</code> - Contains URLs to crawl. This should be the URLs from the sitemap.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The custom behavior script (<code>icaew-com-behaviors.js</code>) is loaded via URL from the <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js">digital-archiving-scripts repository</a>, so no local copy is required. For information on creating custom behaviors, see the <a href="https://crawler.docs.browsertrix.com/user-guide/browser-behaviors/">Browser Behaviors documentation</a>.</p>
+</blockquote>
+<p><strong>Required directory structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="nv">$PWD</span>/
+├──<span class="w"> </span>seedFile.txt
+├──<span class="w"> </span>crawl-config.yaml
+</code></pre></div></p>
+<h4 id="configuration_1">Configuration</h4>
+<blockquote>
+<p><strong>Tip:</strong> For comprehensive configuration options, see the <a href="https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/">YAML Crawl Config documentation</a>.</p>
+</blockquote>
+<p>Example <code>crawl-config.yaml</code> for a full ICAEW.com crawl:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For additional configuration options, see https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/</span>
+<span class="c1"># Example config for a full ICAEW.com crawl. Whether it is a logged-in session is defined within the crawl profile.</span>
+<span class="c1"># This crawl will read the seedFile.txt and also discover pages within the defined scope.</span>
+
+<span class="c1"># Basic setup</span>
+<span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/crawls/profiles/profile.tar.gz</span>
+<span class="nt">seedFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/app/seedFile.txt</span>
+<span class="c1"># Collection name should be &#39;icaew-com-logged-in&#39; or &#39;icaew-com-public&#39;</span>
+<span class="nt">collection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">icaew-com-logged-in</span>
+<span class="nt">screencastPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9037</span>
+<span class="nt">customBehaviors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/icaew-digital-archive/digital-archiving-scripts/refs/heads/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js</span>
+
+<span class="c1"># Additional options</span>
+<span class="nt">allowHashUrls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">combineWARC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">generateWACZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">text</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-warc</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-pages</span>
+<span class="nt">screenshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">view</span>
+<span class="nt">diskUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="c1"># Crawl specific options</span>
+<span class="nt">scopeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;custom&quot;</span>
+<span class="nt">include</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?(cdn\.|regulation\.)?icaew\.com.*$</span><span class="w"> </span><span class="c1"># scope in icaew.com, cd.icaew.com, and regulation.icaew.com</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?(train|volunteer)\.icaew\.com(\/)?(blog.*)?$</span><span class="w"> </span><span class="c1"># scope in parent and blog pages only</span>
+<span class="nt">exclude</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.*(l|L)(o|O)(g|G)(o|O)(f|F)(f|F).*$</span><span class="w"> </span><span class="c1"># block logout URLs</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?icaew\.com\/search.*$</span><span class="w"> </span><span class="c1"># block search pages (robots.txt)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?.*\/member(s|ship)\/active-members.*$</span><span class="w"> </span><span class="c1"># block active-members pages and media files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?.*sprint-test-pages.*$</span><span class="w"> </span><span class="c1"># block sprint-test-pages</span>
+</code></pre></div>
+<h4 id="starting-the-crawl_1">Starting the Crawl</h4>
+<p>Command:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">9037</span>:9037<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls:/crawls<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawl-config.yaml:/app/crawl-config.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/seedFile.txt:/app/seedFile.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span>crawl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--config<span class="w"> </span>/app/crawl-config.yaml
+</code></pre></div></p>
+<blockquote>
+<p><strong>Monitor the crawl progress at:</strong> <a href="http://localhost:9037/">http://localhost:9037</a></p>
+</blockquote>
+<h3 id="3-quality-assurance-and-verification_1">3. Quality Assurance and Verification</h3>
+<p>After the crawl completes, perform the following verification steps:</p>
+<h4 id="1-run-web_archive_validatorpy_1">1. Run web_archive_validator.py</h4>
+<ul>
+<li>Use <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/web%20crawling/web_archive_validator.py">web_archive_validator.py</a> to generate three CSV files:<ul>
+<li><code>matching_urls.csv</code> - Successfully crawled URLs</li>
+<li><code>missing_urls.csv</code> - URLs that failed to crawl</li>
+<li><code>non_200_urls.csv</code> - URLs that returned non-200 status codes</li>
+</ul>
+</li>
+<li>Investigate missing and non-200 URLs. If neccessary, create a new seedFile.txt with problematic URLs. Run a secondary crawl using the same configuration. The URLs in the <code>missing_urls.csv</code> file is obvious, but also look for 404/500 error URLs in <code>non_200_urls.csv</code> too. This secondary crawl should be done via <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/browsertrix-crawler%20files%20and%20scripts/crawl-config-icaew-com-one-hop.yaml">crawl-config-icaew-com-one-hop.yaml</a>, i.e. the ICAEW.com patch crawl {#icaewcom-patch-crawl}. This crawl config differs in the sense that it will only crawl the URLs from the seedFile.txt + 1 hop (to pickup things such as links to PDFs etc.) but will not discover/crawl the entire site like the primary crawl.</li>
+</ul>
+<h4 id="2-final-packaging-of-warcs-into-wacz">2. Final packaging of WARCs into WACZ</h4>
+<ul>
+<li>
+<p>Once you are happy with the QA and verification, use <a href="https://github.com/icaew-digital-archive/digital-archiving-scripts/blob/main/web%20crawling/warc_processor.py">warc_processor.py</a> to:</p>
+<ul>
+<li>Process a single or multiple WARC files into WACZ (Web Archive Collection Zipped) format</li>
+<li>Combine multiple WARC files into a single WARC file</li>
+<li>The command should look something like this:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>warc_processor.py<span class="w"> </span>--input<span class="w"> </span><span class="s2">&quot;/media/digital-archivist/Elements/20250426-ICAEW-COM/crawls/collect</span>
+<span class="s2">ions/icaew-com-logged-in/archive&quot;</span><span class="w"> </span>--output<span class="w"> </span><span class="s2">&quot;/media/digital-archivist/Elements/20250426-ICAEW-COM/crawls/collections/icaew-com-logged-in/archive/20250426-ICAEW-com-logged-in.wacz&quot;</span>
+</code></pre></div>
+<h4 id="3-manual-inspection_1">3. Manual Inspection</h4>
+<ul>
+<li>Use <a href="https://github.com/webrecorder/replayweb.page">replayweb.page</a> to inspect the WACZ file</li>
+<li>Verify page rendering and functionality</li>
+<li>Go to the last captured page and ensure that it has remained "logged-in"</li>
+</ul>
+<hr />
+<h2 id="full-icaewcom-crawl-public">Full ICAEW.com crawl (public)</h2>
+<blockquote>
+<p><strong>Note:</strong> The process for a public crawl is similar to the logged-in crawl, with the main difference being the browser profile creation.</p>
+</blockquote>
+<h3 id="creating-a-browser-profile">Creating a Browser Profile</h3>
+<blockquote>
+<p><strong>Purpose:</strong> This step creates a browser profile for the public crawl without authentication. For detailed information, see the <a href="https://crawler.docs.browsertrix.com/user-guide/creating-and-using-browser-profiles/">official documentation on Creating and Using Browser Profiles</a>.</p>
+</blockquote>
+<p>Command:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">6080</span>:6080<span class="w"> </span>-p<span class="w"> </span><span class="m">9223</span>:9223<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-v<span class="w"> </span><span class="nv">$PWD</span>/crawls/profiles:/crawls/profiles/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-it<span class="w"> </span>webrecorder/browsertrix-crawler:1.5.11<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>create-login-profile<span class="w"> </span>--url<span class="w"> </span><span class="s2">&quot;https://www.icaew.com/&quot;</span>
+</code></pre></div></p>
+<p><strong>Profile Creation Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Open Chrome</strong> and navigate to <a href="http://localhost:9223/">http://localhost:9223/</a></p>
+</li>
+<li>
+<p><strong>Configure browser settings:</strong></p>
+</li>
+<li>Click "Allow all cookies"</li>
+<li>
+<p>Disable Brave shields</p>
+</li>
+<li>
+<p><strong>Verification:</strong></p>
+</li>
+<li>Navigate to a page with StreamAMG video player</li>
+<li>
+<p>Verify that the video element loads correctly</p>
+</li>
+<li>
+<p><strong>Finalize:</strong></p>
+</li>
+<li>Click "Create Profile"</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> The crawl-config is the same as the logged-in crawl, with the exception of the collection name.</p>
+</blockquote>
+<h2 id="icaewcom-patch-crawl">ICAEW.com patch crawl</h2>
+<blockquote>
+<p><strong>Tip:</strong> This crawl config will only crawl the URLs from the seedFile.txt + 1 hop (to pickup things such as links to PDFs etc.) but will not discover/crawl the entire site like the full ICAEW.com crawls. For information on crawl scope configuration, see the <a href="https://crawler.docs.browsertrix.com/user-guide/crawl-scope/">Crawl Scope documentation</a>.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># For additional configuration options, see https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/</span>
+<span class="c1"># Example config for a full ICAEW.com crawl. Whether it is a logged-in session is defined within the crawl profile.</span>
+<span class="c1"># This crawl will read the seedFile.txt and only crawl 1 hop from the seed URLs.</span>
+
+<span class="c1"># Basic setup</span>
+<span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/crawls/profiles/profile.tar.gz</span>
+<span class="nt">seedFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/app/seedFile.txt</span>
+<span class="c1"># Collection name should be &#39;icaew-com-logged-in&#39; or &#39;icaew-com-public&#39;</span>
+<span class="nt">collection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">icaew-com-logged-in</span>
+<span class="nt">screencastPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9037</span>
+<span class="nt">customBehaviors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/icaew-digital-archive/digital-archiving-scripts/refs/heads/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js</span>
+
+<span class="c1"># Additional options</span>
+<span class="nt">allowHashUrls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">combineWARC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">generateWACZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">text</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-warc</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-pages</span>
+<span class="nt">screenshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">view</span>
+<span class="nt">diskUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="c1"># Crawl specific options</span>
+<span class="nt">depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">  </span><span class="c1"># Limit crawl to 1 hop from seed URLs</span>
+<span class="nt">scopeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;custom&quot;</span>
+<span class="nt">include</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?(cdn\.|regulation\.)?icaew\.com.*$</span><span class="w"> </span><span class="c1"># scope in icaew.com, cd.icaew.com, and regulation.icaew.com</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?(train|volunteer)\.icaew\.com(\/)?(blog.*)?$</span><span class="w"> </span><span class="c1"># scope in parent and blog pages only</span>
+<span class="nt">exclude</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^.*(l|L)(o|O)(g|G)(o|O)(f|F)(f|F).*$</span><span class="w"> </span><span class="c1"># block logout URLs</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?icaew\.com\/search.*$</span><span class="w"> </span><span class="c1"># block search pages (robots.txt)</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?.*\/member(s|ship)\/active-members.*$</span><span class="w"> </span><span class="c1"># block active-members pages and media files</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^(http(s)?:\/\/)?(www\.)?.*sprint-test-pages.*$</span><span class="w"> </span><span class="c1"># block sprint-test-pages</span>
+</code></pre></div>
+<hr />
+<h2 id="simple-domain-crawl">Simple domain crawl</h2>
+<blockquote>
+<p><strong>Tip:</strong> This configuration example demonstrates a simple domain-scope crawl that will crawl all pages within the domain(s) listed in the seedFile.txt. This is useful for straightforward website crawls without complex scope requirements.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># For additional configuration options, see https://crawler.docs.browsertrix.com/user-guide/yaml-crawl-config/</span>
+
+<span class="c1"># Basic setup</span>
+<span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/crawls/profiles/profile.tar.gz</span>
+<span class="nt">seedFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/app/seedFile.txt</span>
+<span class="nt">collection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpia</span>
+<span class="nt">screencastPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9037</span>
+<span class="nt">customBehaviors</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/icaew-digital-archive/digital-archiving-scripts/refs/heads/main/browsertrix-crawler%20files%20and%20scripts/icaew-com-behaviors.js</span>
+
+<span class="c1"># Additional options</span>
+<span class="nt">allowHashUrls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">combineWARC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">generateWACZ</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">text</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-warc</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">to-pages</span>
+<span class="nt">screenshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">view</span>
+<span class="nt">diskUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="c1"># Crawl specific options</span>
+<span class="nt">scopeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;domain&quot;</span><span class="w"> </span><span class="c1"># This will crawl the pages/domains listed in the seedFile.txt</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Important Notes:</strong>
+- With <code>scopeType: "domain"</code>, the crawler will automatically crawl all pages within the same domain as the seed URLs
+- Ensure your seedFile.txt includes the main homepage and any important entry points to ensure comprehensive coverage
+- For sites with multiple subdomains, consider using <code>scopeType: "custom"</code> with appropriate include patterns</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
