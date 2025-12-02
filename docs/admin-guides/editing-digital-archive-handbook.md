@@ -39,6 +39,13 @@ Install Material theme:
 pip install mkdocs-material
 ```
 
+Install Git revision date plugin:
+```bash
+pip install mkdocs-git-revision-date-localized-plugin
+```
+
+> **Note:** The `git-revision-date-localized` plugin automatically displays the last modified date on each page based on Git commit history. This date is shown at the bottom of each page and is automatically updated when files are committed to Git.
+
 ### Additional Tools
 * [Visual Studio Code](https://code.visualstudio.com/)  
   Recommended code editor with Markdown support
@@ -61,7 +68,7 @@ pip install mkdocs-material
 ### GitHub Workflow
 When contributing to the handbook, follow these steps to manage your changes:
 
-1. **Create a branch from `master`:**
+1. **Create a branch from `main`:**
    ```bash
    git checkout -b craig
    ```
@@ -80,9 +87,9 @@ When contributing to the handbook, follow these steps to manage your changes:
    git push -u origin craig
    ```
 
-4. **Keep your branch up to date with `master`:**
+4. **Keep your branch up to date with `main`:**
    ```bash
-   git fetch origin && git merge origin/master && git push
+   git fetch origin && git merge origin/main && git push
    ```
 
 ### Local Development
@@ -124,6 +131,14 @@ G:\Apps\Passport\ICAEW Digital Archive Handbook
 - Custom CSS can be added in `/docs/assets/css/custom.css`
 - Images should be placed in `/docs/assets/images/`
 - The generated site is output to `/site/` (excluded from Git)
+
+### Last Modified Dates
+The handbook uses the `git-revision-date-localized` plugin to automatically display the last modified date on each page. This date is based on the Git commit history and appears at the bottom of each page.
+
+> **Note:** For the date to appear correctly, ensure that:
+> - Files are committed to Git (not just saved locally)
+> - The Git history is available when building the site
+> - The plugin is installed and configured in `mkdocs.yml`
 
 ### Navigation
 The navigation structure is defined in `mkdocs.yml` under the `nav:` section. Key sections include:
