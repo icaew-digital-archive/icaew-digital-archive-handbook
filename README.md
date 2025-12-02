@@ -18,13 +18,14 @@ and then activating the virtual environment using:
     
         . ./venv/bin/activate
 
-MkDocs is installed via:  
+Install all required dependencies (MkDocs, Material theme, and plugins) via:  
 
-        pip install mkdocs
+        pip install -r requirements.txt
 
-Material is installed via:  
-
-        pip install mkdocs-material
+Alternatively, install packages individually:
+- `pip install mkdocs` - Static site generator
+- `pip install mkdocs-material` - Material theme for MkDocs
+- `pip install mkdocs-git-revision-date-localized-plugin` - Plugin for displaying last modified dates
 
 The following command allows the mkdocs.yml and the files in /docs/ to be edited with changes seen in realtime:  
 
